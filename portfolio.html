@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | TJ Shuttervibes</title>
+
+<meta name="description"
+content="Explore TJ Shuttervibes photography portfolio featuring portraits, weddings, events, graduations, lifestyle and creative photography.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+:root{
+    --bg:#090b0a;
+    --panel:#111412;
+    --panel2:#171b18;
+    --text:#f5f3ed;
+    --muted:#aeb4ae;
+    --gold:#d6a84f;
+    --gold2:#f0c86b;
+    --border:rgba(255,255,255,.09);
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+.wrap{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(9,11,10,.94);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+}
+
+.header-inner{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:Syne,sans-serif;
+    font-size:20px;
+}
+
+.logo-box{
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.logo-box img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+}
+
+.brand-text span{
+    color:var(--gold);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:8px;
+    margin:0;
+    padding:0;
+}
+
+nav a{
+    display:block;
+    padding:10px 14px;
+    color:#dfe3df;
+    border-radius:8px;
+    transition:.25s;
+}
+
+nav a:hover,
+nav a[aria-current="page"]{
+    background:rgba(214,168,79,.12);
+    color:var(--gold2);
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:transparent;
+    color:white;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.portfolio-hero{
+    text-align:center;
+    padding:100px 0 65px;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(214,168,79,.13),
+            transparent 45%
+        ),
+        var(--bg);
+}
+
+.eyebrow{
+    color:var(--gold2);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+h1,
+h2,
+h3{
+    font-family:Syne,sans-serif;
+}
+
+h1{
+    font-size:clamp(42px,7vw,82px);
+    line-height:.98;
+    margin:0 auto 25px;
+    max-width:900px;
+}
+
+.hero-copy{
+    max-width:760px;
+    margin:auto;
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.category-tabs{
+    position:sticky;
+    top:78px;
+    z-index:900;
+    padding:18px 0;
+    background:rgba(9,11,10,.96);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(12px);
+}
+
+.tabs{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.tab{
+    cursor:pointer;
+    border:1px solid var(--border);
+    background:var(--panel);
+    color:#cdd2ce;
+    padding:11px 19px;
+    border-radius:100px;
+    font:600 14px "DM Sans",sans-serif;
+    transition:.25s;
+}
+
+.tab:hover{
+    border-color:rgba(214,168,79,.55);
+    color:var(--gold2);
+}
+
+.tab.active{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:#111;
+}
+
+/* =========================
+   SESSIONS
+========================= */
+
+.session{
+    display:none;
+    padding:75px 0 90px;
+    animation:fade .35s ease;
+}
+
+.session.active{
+    display:block;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.session-heading{
+    text-align:center;
+    max-width:780px;
+    margin:0 auto 45px;
+}
+
+.session-heading h2{
+    font-size:clamp(30px,5vw,48px);
+    margin:0 0 18px;
+}
+
+.session-heading p{
+    color:var(--muted);
+    line-height:1.8;
+    margin:0;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.photo-card{
+    position:relative;
+    height:390px;
+    overflow:hidden;
+    border-radius:16px;
+    background:var(--panel);
+    cursor:pointer;
+    border:1px solid var(--border);
+}
+
+.photo-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+
+.photo-card:hover img{
+    transform:scale(1.07);
+}
+
+.photo-overlay{
+    position:absolute;
+    inset:auto 0 0;
+    padding:70px 20px 20px;
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.92)
+    );
+}
+
+.photo-overlay strong{
+    display:block;
+    font-family:Syne,sans-serif;
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.photo-overlay span{
+    color:#d2d5d2;
+    font-size:13px;
+}
+
+.view-icon{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.65);
+    color:white;
+    font-size:18px;
+    z-index:2;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(0,0,0,.95);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.lightbox.open{
+    display:flex;
+}
+
+.lightbox-image{
+    max-width:min(92vw,1100px);
+    max-height:82vh;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.lightbox-caption{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    color:white;
+    background:rgba(0,0,0,.7);
+    padding:10px 18px;
+    border-radius:30px;
+}
+
+.lightbox button{
+    position:absolute;
+    border:0;
+    cursor:pointer;
+    color:white;
+    background:rgba(255,255,255,.1);
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    font-size:25px;
+    transition:.25s;
+}
+
+.lightbox button:hover{
+    background:var(--gold);
+    color:#111;
+}
+
+.close-lightbox{
+    top:20px;
+    right:20px;
+}
+
+.prev-photo{
+    left:20px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.next-photo{
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.portfolio-cta{
+    text-align:center;
+    padding:90px 0;
+    background:var(--panel);
+}
+
+.portfolio-cta h2{
+    font-size:clamp(30px,5vw,50px);
+    margin:0 0 18px;
+}
+
+.portfolio-cta p{
+    color:var(--muted);
+    max-width:680px;
+    margin:0 auto 30px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    padding:14px 24px;
+    border-radius:8px;
+    background:var(--gold);
+    color:#111;
+    font-weight:700;
+}
+
+.btn:hover{
+    background:var(--gold2);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:35px 0;
+    text-align:center;
+    color:var(--muted);
+}
+
+footer strong{
+    color:var(--text);
+}
+
+.footer-links{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+    margin-top:15px;
+}
+
+.footer-links a:hover{
+    color:var(--gold2);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .header-inner{
+        min-height:70px;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:0;
+        right:0;
+        background:#0b0d0c;
+        border-bottom:1px solid var(--border);
+        padding:12px;
+    }
+
+    nav.open{
+        display:block;
+    }
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    nav a{
+        padding:14px;
+    }
+
+    .category-tabs{
+        top:70px;
+        overflow-x:auto;
+    }
+
+    .tabs{
+        flex-wrap:nowrap;
+        justify-content:flex-start;
+        width:max-content;
+        margin:auto;
+    }
+
+    .tab{
+        white-space:nowrap;
+    }
+
+    .portfolio-hero{
+        padding:70px 0 50px;
+    }
+
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .photo-card{
+        height:300px;
+    }
+
+    .lightbox-image{
+        max-width:94vw;
+        max-height:75vh;
+    }
+
+    .prev-photo{
+        left:8px;
+    }
+
+    .next-photo{
+        right:8px;
+    }
+}
+
+@media(max-width:480px){
+
+    .brand-text{
+        display:none;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .photo-card{
+        height:420px;
+    }
+
+    .portfolio-hero{
+        padding-top:55px;
+    }
+
+    .hero-copy{
+        font-size:15px;
+    }
+
+    .session{
+        padding-top:55px;
+    }
+
+    .lightbox{
+        padding:10px;
+    }
+
+    .lightbox-caption{
+        bottom:15px;
+        max-width:85%;
+        font-size:13px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="site-header">
+
+<div class="wrap header-inner">
+
+<a href="index.html" class="brand">
+
+<div class="logo-box">
+<img src="tj.png" alt="TJ Shuttervibes logo">
+</div>
+
+<div class="brand-text">
+<strong>TJ Shutter<span>vibes</span></strong>
+</div>
+
+</a>
+
+<button
+class="menu"
+id="menuButton"
+aria-label="Open navigation"
+aria-expanded="false">
+☰
+</button>
+
+<nav id="main-navigation">
+
+<ul>
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="about.html">About</a>
+</li>
+
+<li>
+<a href="services.html">Services</a>
+</li>
+
+<li>
+<a href="portfolio.html" aria-current="page">Portfolio</a>
+</li>
+
+<li>
+<a href="contact.html">Contact</a>
+</li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="portfolio-hero">
+
+<div class="wrap">
+
+<p class="eyebrow">
+TJ SHUTTERVIBES PORTFOLIO
+</p>
+
+<h1>
+Stories captured through our lens.
+</h1>
+
+<p class="hero-copy">
+Explore our photography portfolio featuring portraits, weddings,
+events, graduations, lifestyle and creative photography. Each
+photograph is carefully captured to preserve emotions, memories,
+personal style and the atmosphere of every special occasion.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CATEGORY TABS
+========================= -->
+
+<section class="category-tabs">
+
+<div class="wrap">
+
+<div class="tabs">
+
+<button class="tab active" data-target="portraits">
+Portraits
+</button>
+
+<button class="tab" data-target="weddings">
+Weddings
+</button>
+
+<button class="tab" data-target="events">
+Events
+</button>
+
+<button class="tab" data-target="graduations">
+Graduations
+</button>
+
+<button class="tab" data-target="lifestyle">
+Lifestyle
+</button>
+
+<button class="tab" data-target="creative">
+Creative
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PORTRAITS
+===================================================== -->
+
+<section class="session active" id="portraits">
+
+<div class="wrap">
+
+<div class="session-heading">
+
+<p class="eyebrow">
+SESSION 01
+</p>
+
+<h2>
+Portrait Photography
+</h2>
+
+<p>
+Our portrait photography focuses on personality, confidence and
+natural expression. We create beautiful individual, couple and
+family portraits using creative locations, flattering lighting
+and professional direction.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<!-- PHOTO 1 -->
+
+<article class="photo-card"
+data-image="53.jpeg"
+data-title="Portrait Session 01">
+
+<img src="l.jpeg"
+alt="Portrait photography session"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Natural Portrait</strong>
+
+<span>
+A relaxed portrait showing natural expression and confidence.
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PHOTO 2 -->
+
+<article class="photo-card"
+data-image="52.jpeg"
+data-title="Portrait Session 02">
+
+<img src="l1.jpeg"
+alt="Creative portrait photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Creative Portrait</strong>
+
+<span>
+A stylish portrait designed to highlight personality and character.
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PHOTO 3 -->
+
+<article class="photo-card"
+data-image="51.jpeg"
+data-title="Portrait Session 03">
+
+<img src="l3.jpeg"
+alt="Personal style portrait"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Personal Style</strong>
+
+<span>
+A modern portrait session capturing personal fashion and identity.
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PHOTO 4 -->
+
+<article class="photo-card"
+data-image="50.jpeg"
+data-title="Portrait Session 04">
+
+<img src="l4.jpeg"
+alt="Outdoor portrait photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Outdoor Portrait</strong>
+
+<span>
+A beautiful outdoor portrait surrounded by a natural environment.
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PHOTO 5 -->
+
+<article class="photo-card"
+data-image="49.jpeg"
+data-title="Portrait Session 05">
+
+<img src="l5.jpeg"
+alt="Timeless portrait photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Timeless Moment</strong>
+
+<span>
+A carefully composed portrait created to remain memorable for years.
+</span>
+
+</div>
+
+</article>
+
+
+<!-- PHOTO 6 -->
+
+<article class="photo-card"
+data-image="48.jpeg"
+data-title="Portrait Session 06">
+
+<img src="l6.jpeg"
+alt="Confident portrait photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Bold & Confident</strong>
+
+<span>
+A confident image that celebrates individuality and personal style.
+</span>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     WEDDINGS
+===================================================== -->
+
+<section class="session" id="weddings">
+
+<div class="wrap">
+
+<div class="session-heading">
+
+<p class="eyebrow">
+SESSION 02
+</p>
+
+<h2>
+Wedding Photography
+</h2>
+
+<p>
+We capture weddings as complete visual stories, from preparation
+and ceremony moments to family celebrations, emotions and joyful
+interactions. Every important detail is preserved naturally.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<article class="photo-card"
+data-image="47.jpg"
+data-title="Wedding Session 01">
+
+<img src="9.jpg"
+alt="Wedding photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>The Celebration</strong>
+
+<span>
+A beautiful moment from the beginning of a memorable celebration.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="46.jpeg"
+data-title="Wedding Session 02">
+
+<img src="10.jpg"
+alt="Wedding love photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Love & Emotion</strong>
+
+<span>
+A heartfelt photograph showing genuine love and emotion.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="45.jpeg"
+data-title="Wedding Session 03">
+
+<img src="8.jpg"
+alt="Wedding details photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Beautiful Details</strong>
+
+<span>
+Carefully captured details that make the wedding unique.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="44.jpg"
+data-title="Wedding Session 04">
+
+<img src="7.jpg"
+alt="Wedding family photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Family Moments</strong>
+
+<span>
+A meaningful family moment preserved during the celebration.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="43.jpeg"
+data-title="Wedding Session 05">
+
+<img src="11.jpg"
+alt="Wedding celebration photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Joyful Memories</strong>
+
+<span>
+A joyful moment filled with happiness, smiles and celebration.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="42.jpeg"
+data-title="Wedding Session 06">
+
+<img src="12.jpg"
+alt="Wedding photography memories"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Forever Captured</strong>
+
+<span>
+A timeless wedding memory created to be remembered forever.
+</span>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section class="session" id="events">
+
+<div class="wrap">
+
+<div class="session-heading">
+
+<p class="eyebrow">
+SESSION 03
+</p>
+
+<h2>
+Event Photography
+</h2>
+
+<p>
+We cover birthdays, parties, church functions, corporate gatherings,
+launches and community events. Our goal is to capture both important
+highlights and natural moments without disturbing the occasion.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<article class="photo-card"
+data-image="41.jpeg"
+data-title="Event Session 01">
+
+<img src="c.jpeg"
+alt="Event photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Celebration Moments</strong>
+
+<span>
+A lively moment capturing the excitement of the occasion.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="40.jpeg"
+data-title="Event Session 02">
+
+<img src="c1.jpeg"
+alt="Event people photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>People & Atmosphere</strong>
+
+<span>
+The people and atmosphere that bring an event to life.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="39.jpeg"
+data-title="Event Session 03">
+
+<img src="c3.jpeg"
+alt="Special event photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Special Moments</strong>
+
+<span>
+A special moment carefully preserved during the event.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="38.jpeg"
+data-title="Event Session 04">
+
+<img src="c4.jpeg"
+alt="Live celebration photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Live Celebration</strong>
+
+<span>
+A natural photograph showing the energy of the celebration.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="37.jpeg"
+data-title="Event Session 05">
+
+<img src="c5.jpeg"
+alt="Event memories photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Memorable Details</strong>
+
+<span>
+Small details that help tell the complete story of an event.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="36.jpeg"
+data-title="Event Session 06">
+
+<img src="c6.jpeg"
+alt="Unforgettable event photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Unforgettable Moment</strong>
+
+<span>
+A memorable image showing the spirit and excitement of the event.
+</span>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GRADUATIONS
+===================================================== -->
+
+<section class="session" id="graduations">
+
+<div class="wrap">
+
+<div class="session-heading">
+
+<p class="eyebrow">
+SESSION 04
+</p>
+
+<h2>
+Graduation Photography
+</h2>
+
+<p>
+Graduation is a major achievement. We capture graduates in their
+caps and gowns, individual portraits, family photographs and
+celebrations so that years of hard work can be remembered forever.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<article class="photo-card"
+data-image="35.jpeg"
+data-title="Graduation Session 01">
+
+<img src="g.jpeg"
+alt="Graduation photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Achievement Captured</strong>
+
+<span>
+A proud graduation portrait celebrating academic achievement.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="34.jpeg"
+data-title="Graduation Session 02">
+
+<img src="g1.jpeg"
+alt="Graduation proud moment"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Proud Moment</strong>
+
+<span>
+A memorable portrait celebrating the graduate's success.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="33.jpeg"
+data-title="Graduation Session 03">
+
+<img src="g7.jpeg"
+alt="Graduation family photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Family Memories</strong>
+
+<span>
+A special family moment celebrating an important milestone.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="32.jpeg"
+data-title="Graduation Session 04">
+
+<img src="g6.jpeg"
+alt="Graduation cap and gown"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Cap & Gown</strong>
+
+<span>
+A classic graduation photograph celebrating years of hard work.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="31.jpeg"
+data-title="Graduation Session 05">
+
+<img src="g5.jpeg"
+alt="Graduation success photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Celebrating Success</strong>
+
+<span>
+A joyful photograph marking a well-earned academic achievement.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="30.jpeg"
+data-title="Graduation Session 06">
+
+<img src="g4.jpeg"
+alt="Graduation milestone photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>A Milestone Remembered</strong>
+
+<span>
+A timeless image preserving the excitement of graduation day.
+</span>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LIFESTYLE
+===================================================== -->
+
+<section class="session" id="lifestyle">
+
+<div class="wrap">
+
+<div class="session-heading">
+
+<p class="eyebrow">
+SESSION 05
+</p>
+
+<h2>
+Lifestyle Photography
+</h2>
+
+<p>
+Lifestyle photography captures people naturally in environments where
+they feel comfortable. We focus on genuine expressions, relationships,
+personal style and everyday experiences to create authentic photographs.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<article class="photo-card"
+data-image="29.jpeg"
+data-title="Lifestyle Session 01">
+
+<img src="l1.jpeg"
+alt="Lifestyle photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Natural Moments</strong>
+
+<span>
+A relaxed photograph capturing an authentic everyday moment.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="28.jpeg"
+data-title="Lifestyle Session 02">
+
+<img src="l3.jpeg"
+alt="Lifestyle connection photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Real Connections</strong>
+
+<span>
+A natural image showing genuine connection and personality.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="l4.jpeg"
+data-title="Lifestyle Session 03">
+
+<img src="l4.jpeg"
+alt="Lifestyle everyday photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Everyday Stories</strong>
+
+<span>
+A simple photograph that turns an ordinary moment into a memory.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="28.jpeg"
+data-title="Lifestyle Session 04">
+
+<img src="l5.jpeg"
+alt="Relaxed lifestyle portrait"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Relaxed Portrait</strong>
+
+<span>
+A comfortable lifestyle portrait with a natural and personal feel.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="27.jpeg"
+data-title="Lifestyle Session 05">
+
+<img src="l6.jpeg"
+alt="Authentic lifestyle photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Authentic Expression</strong>
+
+<span>
+A genuine expression captured without forced posing.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="26.jpeg"
+data-title="Lifestyle Session 06">
+
+<img src="l7.jpeg"
+alt="Everyday lifestyle photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Your Everyday World</strong>
+
+<span>
+A personal story captured through natural lifestyle photography.
+</span>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CREATIVE
+===================================================== -->
+
+<section class="session" id="creative">
+
+<div class="wrap">
+
+<div class="session-heading">
+
+<p class="eyebrow">
+SESSION 06
+</p>
+
+<h2>
+Creative Photography
+</h2>
+
+<p>
+Creative photography gives room for imagination, fashion, branding,
+artistic concepts and visual storytelling. We experiment with
+composition, lighting, styling and locations to create distinctive
+photographs with strong visual character.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<article class="photo-card"
+data-image="25.jpeg"
+data-title="Creative Session 01">
+
+<img src="1.jpg"
+alt="Creative photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Bold Concepts</strong>
+
+<span>
+A creative image built around a bold and expressive visual idea.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="23.jpeg"
+data-title="Creative Session 02">
+
+<img src="2.jpg"
+alt="Creative fashion photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Fashion & Style</strong>
+
+<span>
+A stylish photograph combining fashion, personality and creativity.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="24.jpeg"
+data-title="Creative Session 03">
+
+<img src="3.jpg"
+alt="Creative visual storytelling"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Visual Story</strong>
+
+<span>
+A creative composition designed to communicate a unique story.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="20.jpeg"
+data-title="Creative Session 04">
+
+<img src="4.jpg"
+alt="Personal branding photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Personal Branding</strong>
+
+<span>
+A professional creative image designed to strengthen personal identity.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="5.jpg"
+data-title="Creative Session 05">
+
+<img src="21.jpeg"
+alt="Creative photography direction"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Unique Direction</strong>
+
+<span>
+An artistic photograph created through thoughtful creative direction.
+</span>
+
+</div>
+
+</article>
+
+
+<article class="photo-card"
+data-image="6.jpg"
+data-title="Creative Session 06">
+
+<img src="6.jpg"
+alt="Distinctive creative photography"
+loading="lazy">
+
+<div class="view-icon">⌕</div>
+
+<div class="photo-overlay">
+
+<strong>Distinctive Image</strong>
+
+<span>
+A memorable creative photograph with a strong visual identity.
+</span>
+
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="portfolio-cta">
+
+<div class="wrap">
+
+<p class="eyebrow">
+READY FOR YOUR SESSION?
+</p>
+
+<h2>
+Let's create something memorable.
+</h2>
+
+<p>
+Tell us about your occasion, idea or photography needs and we can
+plan a session that matches your style and captures the moments
+that matter most to you.
+</p>
+
+<a href="contact.html" class="btn">
+Book a Shoot
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div class="lightbox"
+id="lightbox"
+aria-hidden="true">
+
+<button
+class="close-lightbox"
+id="closeLightbox"
+aria-label="Close">
+×
+</button>
+
+<button
+class="prev-photo"
+id="prevPhoto"
+aria-label="Previous photo">
+‹
+</button>
+
+<img
+class="lightbox-image"
+id="lightboxImage"
+src=""
+alt="">
+
+<div
+class="lightbox-caption"
+id="lightboxCaption">
+</div>
+
+<button
+class="next-photo"
+id="nextPhoto"
+aria-label="Next photo">
+›
+</button>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="wrap">
+
+<strong>
+TJ Shuttervibes
+</strong>
+
+<p>
+Your moments. Our lens. Your story.
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="services.html">Services</a>
+
+<a href="portfolio.html">Portfolio</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<p>
+© 2026 TJ Shuttervibes. All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navigation =
+document.getElementById("main-navigation");
+
+menuButton.addEventListener("click", () => {
+
+    const isOpen =
+    navigation.classList.toggle("open");
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+});
+
+
+document
+.querySelectorAll("#main-navigation a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navigation.classList.remove("open");
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    });
+
+});
+
+
+/* =========================
+   CATEGORY TABS
+========================= */
+
+const tabs =
+document.querySelectorAll(".tab");
+
+const sessions =
+document.querySelectorAll(".session");
+
+
+tabs.forEach(tab => {
+
+    tab.addEventListener("click", () => {
+
+        const target =
+        tab.dataset.target;
+
+
+        tabs.forEach(item => {
+
+            item.classList.remove("active");
+
+        });
+
+
+        sessions.forEach(session => {
+
+            session.classList.remove("active");
+
+        });
+
+
+        tab.classList.add("active");
+
+
+        const selectedSession =
+        document.getElementById(target);
+
+
+        if(selectedSession){
+
+            selectedSession.classList.add("active");
+
+        }
+
+
+        window.scrollTo({
+
+            top:
+            document.querySelector(
+                ".category-tabs"
+            ).offsetTop - 5,
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+});
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImage =
+document.getElementById("lightboxImage");
+
+const lightboxCaption =
+document.getElementById("lightboxCaption");
+
+const closeLightbox =
+document.getElementById("closeLightbox");
+
+const prevPhoto =
+document.getElementById("prevPhoto");
+
+const nextPhoto =
+document.getElementById("nextPhoto");
+
+
+let currentPhotos = [];
+
+let currentIndex = 0;
+
+
+/* GET PHOTOS FROM ACTIVE SECTION */
+
+function getActivePhotos(){
+
+    const activeSession =
+    document.querySelector(
+        ".session.active"
+    );
+
+    if(!activeSession){
+        return [];
+    }
+
+    return Array.from(
+        activeSession.querySelectorAll(
+            ".photo-card"
+        )
+    );
+
+}
+
+
+/* SHOW PHOTO */
+
+function showPhoto(index){
+
+    currentPhotos =
+    getActivePhotos();
+
+
+    if(!currentPhotos.length){
+        return;
+    }
+
+
+    if(index < 0){
+
+        index =
+        currentPhotos.length - 1;
+
+    }
+
+
+    if(index >= currentPhotos.length){
+
+        index = 0;
+
+    }
+
+
+    currentIndex = index;
+
+
+    const card =
+    currentPhotos[currentIndex];
+
+
+    lightboxImage.src =
+    card.dataset.image;
+
+
+    lightboxImage.alt =
+    card.dataset.title;
+
+
+    lightboxCaption.textContent =
+    card.dataset.title;
+
+
+    lightbox.classList.add("open");
+
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    document.body.style.overflow =
+    "hidden";
+
+}
+
+
+/* OPEN EACH PHOTO */
+
+document
+.querySelectorAll(".photo-card")
+.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        currentPhotos =
+        getActivePhotos();
+
+
+        const index =
+        currentPhotos.indexOf(card);
+
+
+        showPhoto(index);
+
+    });
+
+});
+
+
+/* CLOSE LIGHTBOX */
+
+function closeGallery(){
+
+    lightbox.classList.remove("open");
+
+    lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    lightboxImage.src = "";
+
+    lightboxCaption.textContent = "";
+
+    document.body.style.overflow = "";
+
+}
+
+
+closeLightbox.addEventListener(
+    "click",
+    closeGallery
+);
+
+
+/* PREVIOUS */
+
+prevPhoto.addEventListener(
+    "click",
+    () => {
+
+        showPhoto(
+            currentIndex - 1
+        );
+
+    }
+);
+
+
+/* NEXT */
+
+nextPhoto.addEventListener(
+    "click",
+    () => {
+
+        showPhoto(
+            currentIndex + 1
+        );
+
+    }
+);
+
+
+/* CLICK BACKGROUND TO CLOSE */
+
+lightbox.addEventListener(
+    "click",
+    event => {
+
+        if(event.target === lightbox){
+
+            closeGallery();
+
+        }
+
+    }
+);
+
+
+/* KEYBOARD */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            !lightbox.classList.contains(
+                "open"
+            )
+        ){
+
+            return;
+
+        }
+
+
+        if(event.key === "Escape"){
+
+            closeGallery();
+
+        }
+
+
+        if(event.key === "ArrowLeft"){
+
+            showPhoto(
+                currentIndex - 1
+            );
+
+        }
+
+
+        if(event.key === "ArrowRight"){
+
+            showPhoto(
+                currentIndex + 1
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================
+   TOUCH SWIPE
+========================= */
+
+let touchStartX = 0;
+
+
+lightbox.addEventListener(
+    "touchstart",
+    event => {
+
+        touchStartX =
+        event.changedTouches[0].screenX;
+
+    }
+);
+
+
+lightbox.addEventListener(
+    "touchend",
+    event => {
+
+        const touchEndX =
+        event.changedTouches[0].screenX;
+
+
+        const difference =
+        touchStartX - touchEndX;
+
+
+        if(
+            Math.abs(difference) < 50
+        ){
+
+            return;
+
+        }
+
+
+        if(difference > 0){
+
+            showPhoto(
+                currentIndex + 1
+            );
+
+        }else{
+
+            showPhoto(
+                currentIndex - 1
+            );
+
+        }
+
+    }
+);
+
+</script>
+</body>
+</html>
+

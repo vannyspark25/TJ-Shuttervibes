@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About TJ Shuttervibes — photography with feeling, creativity and authentic storytelling.">
+<meta name="theme-color" content="#123b63">
+<title>About | TJ Shuttervibes</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#123b63;
+  --blue-dark:#082844;
+  --blue-deep:#061d31;
+  --blue-light:#1c527f;
+  --gold:#d8ae55;
+  --gold-light:#f1d38a;
+  --white:#fff;
+  --soft:#f4f7fa;
+  --text:#172536;
+  --muted:#607083;
+  --border:rgba(18,59,99,.13);
+  --shadow:0 18px 50px rgba(5,27,46,.12);
+  --radius:22px;
+  --max:1180px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--soft);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--max),92%);margin:auto}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(8,40,68,.96);
+  backdrop-filter:blur(14px);
+  box-shadow:0 5px 25px rgba(0,0,0,.15);
+}
+header .wrap{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.logo{
+  font-family:Syne,sans-serif;
+  font-size:1.55rem;
+  font-weight:800;
+  color:#fff;
+  letter-spacing:-1px;
+}
+.logo span{color:var(--gold)}
+nav ul{list-style:none;display:flex;align-items:center;gap:8px}
+nav a{
+  display:block;
+  padding:10px 15px;
+  color:#eef5fb;
+  border-radius:10px;
+  font-weight:600;
+  transition:.25s ease;
+}
+nav a:hover,nav a[aria-current="page"]{
+  background:rgba(216,174,85,.15);
+  color:var(--gold-light);
+}
+.menu{
+  display:none;
+  border:1px solid rgba(255,255,255,.2);
+  background:transparent;
+  color:#fff;
+  padding:9px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* PAGE HERO */
+.page-head{
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  padding:105px 0 95px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(216,174,85,.22),transparent 30%),
+    linear-gradient(135deg,var(--blue-dark),var(--blue));
+}
+.page-head:before{
+  content:"";
+  position:absolute;
+  width:350px;height:350px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:50%;
+  right:-100px;bottom:-180px;
+}
+.page-head:after{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;
+  border:1px solid rgba(216,174,85,.2);
+  border-radius:50%;
+  right:80px;top:-90px;
+}
+.page-head .wrap{position:relative;z-index:2}
+.eyebrow{
+  color:var(--gold-light);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:.78rem;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.page-head h1{
+  font-family:Syne,sans-serif;
+  font-size:clamp(3rem,7vw,5.8rem);
+  line-height:1;
+  letter-spacing:-3px;
+  margin-bottom:18px;
+}
+.page-head p{font-size:1.15rem;color:#dce8f2;max-width:620px}
+
+/* SECTIONS */
+section{padding:95px 0}
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+.ph{
+  min-height:500px;
+  border-radius:var(--radius);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  padding:30px;
+  color:#fff;
+  background:
+    linear-gradient(to top,rgba(3,20,34,.85),transparent 55%),
+    linear-gradient(135deg,#1c527f,#092d4c);
+  box-shadow:var(--shadow);
+}
+.ph:before,.ph:after{
+  content:"";
+  position:absolute;
+  border:1px solid rgba(216,174,85,.3);
+  border-radius:50%;
+}
+.ph:before{width:260px;height:260px;top:-80px;right:-70px}
+.ph:after{width:140px;height:140px;bottom:70px;right:40px}
+.ph.c:after{
+  content:"TJ";
+  border:0;
+  width:auto;height:auto;
+  font-family:Syne,sans-serif;
+  font-size:6rem;
+  font-weight:800;
+  color:rgba(255,255,255,.08);
+  right:30px;bottom:10px;
+}
+.ph::first-line{position:relative}
+.ph{font-size:1.1rem;font-weight:700;letter-spacing:1px}
+.prose h2,.section-heading h2{
+  font-family:Syne,sans-serif;
+  font-size:clamp(2rem,4vw,3.5rem);
+  line-height:1.1;
+  color:var(--blue-dark);
+  margin-bottom:22px;
+}
+.prose p{color:var(--muted);margin-bottom:18px}
+.prose p:last-child{margin-bottom:0}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--gold);
+  color:#15283b;
+  padding:13px 22px;
+  border-radius:11px;
+  font-weight:800;
+  border:1px solid var(--gold);
+  transition:.25s ease;
+  box-shadow:0 10px 25px rgba(216,174,85,.2);
+}
+.btn:hover{transform:translateY(-3px);background:var(--gold-light)}
+.btn-outline{
+  background:transparent;
+  color:#fff;
+  border-color:rgba(255,255,255,.45);
+  box-shadow:none;
+}
+
+/* FEATURES */
+.section-heading{text-align:center;max-width:700px;margin:0 auto 45px}
+.section-heading p{color:var(--muted)}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.card{
+  background:#fff;
+  padding:32px;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:0 10px 35px rgba(10,35,55,.06);
+  transition:.3s ease;
+  position:relative;
+  overflow:hidden;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  left:0;top:0;width:4px;height:0;
+  background:var(--gold);
+  transition:.3s ease;
+}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.card:hover:before{height:100%}
+.card-icon{
+  width:52px;height:52px;
+  display:grid;place-items:center;
+  border-radius:15px;
+  background:rgba(18,59,99,.08);
+  color:var(--blue);
+  font-size:1.35rem;
+  margin-bottom:20px;
+}
+.card h3{
+  font-family:Syne,sans-serif;
+  font-size:1.3rem;
+  color:var(--blue-dark);
+  margin-bottom:9px;
+}
+.card p{color:var(--muted)}
+
+/* STATS */
+.stats{
+  background:var(--blue-dark);
+  color:#fff;
+  padding:65px 0;
+}
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  text-align:center;
+  gap:25px;
+}
+.stat{padding:10px}
+.stat strong{
+  display:block;
+  font-family:Syne,sans-serif;
+  color:var(--gold-light);
+  font-size:2.6rem;
+  line-height:1;
+  margin-bottom:10px;
+}
+.stat span{color:#d7e2eb;font-size:.95rem}
+
+/* PROCESS */
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  counter-reset:process;
+}
+.process-card{
+  position:relative;
+  padding:28px 24px;
+  background:#fff;
+  border-radius:18px;
+  border:1px solid var(--border);
+}
+.process-card span{
+  display:inline-grid;
+  place-items:center;
+  width:40px;height:40px;
+  border-radius:50%;
+  background:var(--blue);
+  color:#fff;
+  font-weight:800;
+  margin-bottom:18px;
+}
+.process-card h3{color:var(--blue-dark);margin-bottom:8px}
+.process-card p{color:var(--muted);font-size:.95rem}
+
+/* FAQ */
+.faq{max-width:850px;margin:auto}
+details{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:15px;
+  margin-bottom:13px;
+  overflow:hidden;
+}
+summary{
+  cursor:pointer;
+  list-style:none;
+  padding:20px 24px;
+  font-weight:800;
+  color:var(--blue-dark);
+  position:relative;
+  padding-right:55px;
+}
+summary::-webkit-details-marker{display:none}
+summary:after{
+  content:"+";
+  position:absolute;
+  right:23px;
+  font-size:1.5rem;
+  color:var(--gold);
+  top:15px;
+}
+details[open] summary:after{content:"−"}
+details p{padding:0 24px 22px;color:var(--muted)}
+
+/* CTA */
+.cta{
+  color:#fff;
+  text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(216,174,85,.15),transparent 25%),
+    linear-gradient(135deg,var(--blue),var(--blue-dark));
+}
+.cta h2{
+  font-family:Syne,sans-serif;
+  font-size:clamp(2rem,5vw,3.5rem);
+  margin-bottom:14px;
+}
+.cta p{color:#dbe7f0;max-width:650px;margin:0 auto 28px}
+
+/* FOOTER */
+footer{
+  background:#061b2d;
+  color:#aebfcd;
+  padding:55px 0 25px;
+}
+.footer-main{
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:45px;
+}
+footer strong{color:#fff;font-family:Syne,sans-serif;font-size:1.2rem}
+footer p{margin-top:12px;max-width:360px}
+.footer-links h4{color:#fff;margin-bottom:13px}
+.footer-links a{display:block;margin:7px 0;color:#b7c6d2;transition:.2s}
+.footer-links a:hover{color:var(--gold-light);padding-left:4px}
+.copyright{
+  border-top:1px solid rgba(255,255,255,.1);
+  margin-top:40px;
+  padding-top:20px;
+  font-size:.9rem;
+  color:#8296a7;
+}
+
+/* REVEAL ANIMATION */
+.reveal{opacity:0;transform:translateY(25px);transition:.7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* MOBILE */
+@media(max-width:850px){
+  header .wrap{min-height:70px}
+  .menu{display:block}
+  nav{
+    position:absolute;
+    left:4%;
+    right:4%;
+    top:78px;
+    background:var(--blue-dark);
+    border-radius:16px;
+    padding:10px;
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    display:none;
+  }
+  nav.open{display:block}
+  nav ul{display:block}
+  nav a{padding:13px 15px}
+  .page-head{padding:80px 0 70px}
+  .two{grid-template-columns:1fr;gap:40px}
+  .ph{min-height:380px}
+  .grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+
+@media(max-width:560px){
+  section{padding:70px 0}
+  .page-head h1{font-size:3.2rem;letter-spacing:-2px}
+  .ph{min-height:300px}
+  .stat-grid,.process-grid,.footer-main{grid-template-columns:1fr}
+  .card{padding:26px}
+  .logo{font-size:1.3rem}
+}
+
+/* Accessibility */
+:focus-visible{outline:3px solid var(--gold-light);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* EXPANDED ABOUT FEATURES */
+.location-section{background:#fff}
+.location-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.location-copy h2,.booking-copy h2{
+  font-family:Syne,sans-serif;color:var(--blue-dark);
+  font-size:clamp(2rem,4vw,3.4rem);line-height:1.12;margin-bottom:20px
+}
+.location-copy>p,.booking-copy>p{color:var(--muted);margin-bottom:17px}
+.location-details{margin:28px 0;display:grid;gap:13px}
+.location-details>div{display:flex;gap:14px;align-items:center;padding:14px 16px;background:var(--soft);border-radius:13px}
+.location-details span{font-size:1.4rem}
+.location-details strong,.location-details small{display:block}
+.location-details strong{color:var(--blue-dark)}
+.location-details small{color:var(--muted)}
+.location-card{
+  min-height:480px;padding:38px;border-radius:25px;color:#fff;
+  background:linear-gradient(145deg,var(--blue),var(--blue-dark));
+  box-shadow:var(--shadow);position:relative;overflow:hidden
+}
+.location-card:after{
+  content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(216,174,85,.25);
+  border-radius:50%;right:-110px;top:-100px
+}
+.location-card h3{font-family:Syne,sans-serif;font-size:2rem;position:relative;z-index:2}
+.location-card>p:not(.eyebrow){color:#d8e5ee;position:relative;z-index:2}
+.location-pin{font-size:2.7rem;margin-bottom:25px;position:relative;z-index:2}
+.map-placeholder{
+  height:210px;margin-top:35px;border:1px solid rgba(255,255,255,.18);border-radius:18px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:radial-gradient(circle,rgba(216,174,85,.12),transparent 55%);
+  text-align:center;position:relative;z-index:2
+}
+.map-placeholder span{font-family:Syne,sans-serif;font-size:2rem;color:var(--gold-light)}
+.map-placeholder small{color:#c8d8e4}
+.services-rich{background:#f0f5f9}
+.rich-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rich-card{
+  background:#fff;border-radius:19px;padding:30px;border:1px solid var(--border);
+  position:relative;overflow:hidden;transition:.3s
+}
+.rich-card:hover{transform:translateY(-7px);box-shadow:var(--shadow)}
+.rich-card>span{font-family:Syne,sans-serif;color:var(--gold);font-size:.9rem}
+.rich-card h3{color:var(--blue-dark);font-family:Syne,sans-serif;margin:13px 0 9px}
+.rich-card p{color:var(--muted);font-size:.95rem}
+.why-section{background:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why-item{padding:25px;border-left:3px solid var(--gold);background:var(--soft)}
+.why-item b{color:var(--gold);font-family:Syne,sans-serif}
+.why-item h3{color:var(--blue-dark);margin:12px 0 7px}
+.why-item p{color:var(--muted);font-size:.93rem}
+.booking-section{background:#eef4f8}
+.booking-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.booking-copy .eyebrow{margin-bottom:12px}
+.booking-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.whatsapp{background:#fff;color:var(--blue-dark);border-color:#fff}
+.booking-box{
+  background:var(--blue-dark);color:#fff;padding:38px;border-radius:24px;
+  box-shadow:var(--shadow)
+}
+.booking-box>span{font-size:2.5rem}
+.booking-box h3{font-family:Syne,sans-serif;font-size:1.8rem;margin:12px 0}
+.booking-box>p{color:#d4e1ea}
+.booking-line{border-top:1px solid rgba(255,255,255,.13);padding-top:15px;margin-top:17px}
+.booking-line strong,.booking-line small{display:block}
+.booking-line small{color:#c2d2de;margin-top:3px}
+
+@media(max-width:850px){
+  .location-grid,.booking-grid{grid-template-columns:1fr}
+  .rich-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .rich-grid,.why-grid{grid-template-columns:1fr}
+  .location-card{min-height:400px;padding:28px}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="TJ Shuttervibes Home">
+      TJ Shutter<span>vibes</span>
+    </a>
+
+    <button class="menu" id="menuButton" aria-expanded="false" aria-controls="mainNav">
+      Menu
+    </button>
+
+    <nav id="mainNav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">TJ SHUTTERVIBES PHOTOGRAPHY</p>
+    <h1>About us</h1>
+    <p>Your moments. Our lens. Your story.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two reveal">
+    <div class="ph c" aria-label="Behind the lens">
+      Behind the lens
+    </div>
+
+    <div class="prose">
+      <p class="eyebrow">OUR STORY</p>
+      <h2>Photography with feeling</h2>
+      <p>TJ Shuttervibes is a creative photography brand built around the belief that every person, celebration, milestone and special occasion has a story worth preserving. We combine photography, visual creativity and thoughtful storytelling to create images that do more than simply record what happened — they help you remember how the moment felt.</p>
+      <p>Our approach is relaxed, professional and personal. Whether you are preparing for a graduation, celebrating a wedding, planning a birthday or corporate event, creating portraits, building a personal brand, or simply looking for beautiful lifestyle photographs, we take time to understand the purpose behind your session. We pay attention to expressions, natural interactions, lighting, composition, backgrounds and the small details that can make an ordinary photograph feel meaningful.</p>
+      <p>We work with a simple philosophy: natural moments, clean edits, sharp details, balanced colors and photographs that still feel authentic to you. Rather than forcing every pose, we guide you where necessary and give you room to be comfortable, allowing genuine smiles, emotions and personality to appear naturally in front of the camera.</p>
+      <p>Based in <strong>Homa Bay County, Tom Mboya University Street</strong>, TJ Shuttervibes is available for clients looking for reliable and creative photography services within Homa Bay and surrounding areas. Our goal is to make every photography experience memorable from the first conversation to the final delivered image.</p>
+      <a class="btn" href="portfolio.html" style="margin-top:12px">Explore our work →</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <p class="eyebrow">OUR APPROACH</p>
+      <h2>What makes our photography different?</h2>
+      <p>Every session is built around authentic moments, careful composition and photographs you will be proud to keep.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card reveal">
+        <div class="card-icon">◉</div>
+        <h3>Natural</h3>
+        <p>We guide lightly so you look and feel like yourself, allowing genuine expressions and real emotions to come through.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">✦</div>
+        <h3>Clean</h3>
+        <p>Careful editing that keeps skin, color and light honest while giving every photograph a polished professional finish.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card-icon">◆</div>
+        <h3>Sharp</h3>
+        <p>Crisp detail in every frame, with attention to composition, lighting and the small details that make an image memorable.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat reveal"><strong data-count="6">0</strong><span>Photography Styles</span></div>
+      <div class="stat reveal"><strong data-count="100">0</strong><span>Passion for Every Shoot</span></div>
+      <div class="stat reveal"><strong data-count="1">0</strong><span>Unique Story</span></div>
+      <div class="stat reveal"><strong>24/7</strong><span>Creative Inspiration</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <p class="eyebrow">THE EXPERIENCE</p>
+      <h2>How we work</h2>
+      <p>From the first conversation to the final image, we keep the process simple and focused on your story.</p>
+    </div>
+
+    <div class="process-grid">
+      <article class="process-card reveal">
+        <span>01</span>
+        <h3>Connect</h3>
+        <p>Tell us about your event, idea, preferred style and what you want your photographs to communicate.</p>
+      </article>
+
+      <article class="process-card reveal">
+        <span>02</span>
+        <h3>Plan</h3>
+        <p>We discuss the location, timing, creative direction and important details before the session begins.</p>
+      </article>
+
+      <article class="process-card reveal">
+        <span>03</span>
+        <h3>Capture</h3>
+        <p>We create natural, carefully composed images while making the experience relaxed and enjoyable.</p>
+      </article>
+
+      <article class="process-card reveal">
+        <span>04</span>
+        <h3>Deliver</h3>
+        <p>Your selected photographs are professionally edited and prepared for you to enjoy and share.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <p class="eyebrow">COMMON QUESTIONS</p>
+      <h2>Frequently asked questions</h2>
+    </div>
+
+    <div class="faq">
+      <details class="reveal">
+        <summary>What types of photography do you offer?</summary>
+        <p>We work across portraits, weddings, events, graduations, lifestyle sessions, personal branding and creative photography.</p>
+      </details>
+
+      <details class="reveal">
+        <summary>Can I request a specific photography style?</summary>
+        <p>Yes. Share your preferred mood, references, location and ideas with us so the session can be planned around your vision.</p>
+      </details>
+
+      <details class="reveal">
+        <summary>How do I book a shoot?</summary>
+        <p>Use the Contact page to send your details and preferred date, or contact TJ Shuttervibes directly through the available communication options.</p>
+      </details>
+
+      <details class="reveal">
+        <summary>Do you photograph events and celebrations?</summary>
+        <p>Yes. Our photography services can cover celebrations and events, with an approach focused on preserving genuine moments and important details.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<section class="location-section">
+  <div class="wrap location-grid">
+    <div class="location-copy reveal">
+      <p class="eyebrow">OUR LOCATION</p>
+      <h2>Photography in Homa Bay County</h2>
+      <p>TJ Shuttervibes is located in <strong>Homa Bay County, Tom Mboya University Street</strong>. Our location gives us a convenient base for portrait sessions, graduations, lifestyle photography, personal branding, celebrations, events and other creative shoots.</p>
+      <p>Clients can contact us before visiting so we can confirm availability, discuss the type of session required and agree on the most suitable location, timing and photography package.</p>
+      <div class="location-details">
+        <div><span>📍</span><div><strong>Location</strong><small>Homa Bay County, Tom Mboya University Street</small></div></div>
+        <div><span>📞</span><div><strong>Bookings</strong><small>Call or WhatsApp to discuss your photography needs</small></div></div>
+        <div><span>📸</span><div><strong>Specialties</strong><small>Portraits, weddings, events, graduations, lifestyle and creative shoots</small></div></div>
+      </div>
+      <a class="btn" href="contact.html">Plan Your Session →</a>
+    </div>
+
+    <div class="location-card reveal">
+      <div class="location-pin">📍</div>
+      <p class="eyebrow">TJ SHUTTERVIBES</p>
+      <h3>Tom Mboya University Street</h3>
+      <p>Homa Bay County, Kenya</p>
+      <div class="map-placeholder">
+        <span>HOMA BAY</span>
+        <small>Tom Mboya University Street</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-rich">
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <p class="eyebrow">WHAT WE CAPTURE</p>
+      <h2>Photography created around your story</h2>
+      <p>Our services are flexible enough for individual clients, couples, families, students, graduates, businesses, organizations and event planners.</p>
+    </div>
+    <div class="rich-grid">
+      <article class="rich-card reveal"><span>01</span><h3>Portrait Photography</h3><p>Personal portraits designed to show confidence, personality and character. Ideal for professional profiles, birthdays, personal memories, social media and creative concepts.</p></article>
+      <article class="rich-card reveal"><span>02</span><h3>Wedding Photography</h3><p>Thoughtful coverage of preparations, details, family moments, couple portraits, celebrations and the emotions that make your wedding day unique.</p></article>
+      <article class="rich-card reveal"><span>03</span><h3>Graduation Photography</h3><p>Celebrate your academic achievement with polished individual portraits, family photographs, group sessions and memorable images around your graduation location.</p></article>
+      <article class="rich-card reveal"><span>04</span><h3>Event Photography</h3><p>Coverage for birthdays, launches, parties, meetings, church functions, corporate occasions and other events where important moments deserve to be preserved.</p></article>
+      <article class="rich-card reveal"><span>05</span><h3>Lifestyle Photography</h3><p>Relaxed sessions that capture everyday personality, relationships, environments and genuine interactions in a natural and comfortable way.</p></article>
+      <article class="rich-card reveal"><span>06</span><h3>Creative & Branding</h3><p>Concept-driven photography for artists, entrepreneurs, personal brands, fashion ideas and clients who want distinctive visuals with a strong creative identity.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="wrap">
+    <div class="section-heading reveal">
+      <p class="eyebrow">WHY CLIENTS CHOOSE US</p>
+      <h2>A photography experience built around you</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal"><b>01</b><h3>Personal Attention</h3><p>We listen to your ideas and understand what you want before the camera comes out.</p></div>
+      <div class="why-item reveal"><b>02</b><h3>Creative Direction</h3><p>We help with poses, framing, locations and visual ideas while keeping your personality at the center.</p></div>
+      <div class="why-item reveal"><b>03</b><h3>Professional Finish</h3><p>Images are carefully reviewed and edited to create a consistent, polished final collection.</p></div>
+      <div class="why-item reveal"><b>04</b><h3>Memorable Moments</h3><p>We look beyond posed photographs to capture genuine reactions, interactions and details.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="booking-section">
+  <div class="wrap booking-grid">
+    <div class="booking-copy reveal">
+      <p class="eyebrow">READY WHEN YOU ARE</p>
+      <h2>Let's plan something worth remembering.</h2>
+      <p>Have an upcoming graduation, wedding, birthday, event, portrait session or creative idea? Tell us what you have in mind. We can discuss your preferred date, location, photography style and the kind of memories you want to take home.</p>
+      <p>For the best experience, contact TJ Shuttervibes early so your preferred date and session arrangements can be discussed in advance.</p>
+      <div class="booking-actions">
+        <a class="btn" href="contact.html">Book a Shoot</a>
+        <a class="btn whatsapp" href="https://wa.me/254702028681" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="booking-box reveal">
+      <span>📷</span>
+      <h3>Tell us your vision</h3>
+      <p>What are you celebrating? Where would you like the session? What style do you prefer? Share the details and let's turn the idea into photographs.</p>
+      <div class="booking-line"><strong>Location</strong><small>Homa Bay County · Tom Mboya University Street</small></div>
+      <div class="booking-line"><strong>Phone / WhatsApp</strong><small>+254 702 028 681</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <p class="eyebrow">LET'S CREATE SOMETHING SPECIAL</p>
+    <h2>Ready to capture your moment?</h2>
+    <p>Tell us what you are planning and we will take care of the rest.</p>
+    <a class="btn" href="contact.html">Book a shoot →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-main">
+    <div>
+      <strong>TJ Shuttervibes</strong>
+      <p>Your moments. Our lens. Your story.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+    </div>
+
+    <div class="footer-links">
+      <h4>Connect</h4>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://wa.me/254702028681" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+254702028681">Call Us</a>
+    </div>
+  </div>
+
+  <div class="wrap copyright">
+    &copy; 2026 TJ Shuttervibes. All rights reserved.
+  </div>
+</footer>
+
+<script>
+const menuButton = document.getElementById("menuButton");
+const mainNav = document.getElementById("mainNav");
+
+menuButton.addEventListener("click", () => {
+  const open = mainNav.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", open);
+  menuButton.textContent = open ? "Close" : "Menu";
+});
+
+mainNav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "Menu";
+  });
+});
+
+document.addEventListener("click", event => {
+  if (!event.target.closest("header") && mainNav.classList.contains("open")) {
+    mainNav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "Menu";
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    mainNav.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.textContent = "Menu";
+  }
+});
+
+const revealItems = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold:0.12});
+
+revealItems.forEach(item => observer.observe(item));
+
+const counters = document.querySelectorAll("[data-count]");
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    const el = entry.target;
+    const target = Number(el.dataset.count);
+    const duration = 1200;
+    const start = performance.now();
+
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target + (target === 100 ? "%" : "+");
+    }
+
+    requestAnimationFrame(update);
+    counterObserver.unobserve(el);
+  });
+}, {threshold:0.8});
+
+counters.forEach(counter => counterObserver.observe(counter));
+</script>
+
+</body>
+</html>

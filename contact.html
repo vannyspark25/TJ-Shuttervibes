@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | TJ Shuttervibes</title>
+<meta name="description" content="Contact and book TJ Shuttervibes photography services in Homa Bay County, Tom Mboya University Street.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --blue:#073b8f;
+  --blue2:#0b56c7;
+  --blue3:#eaf2ff;
+  --yellow:#ffd21f;
+  --yellow2:#ffe66b;
+  --red:#d71920;
+  --red2:#a90e14;
+  --ink:#101828;
+  --muted:#667085;
+  --white:#fff;
+  --bg:#f7f9fc;
+  --line:#e4e7ec;
+  --shadow:0 18px 55px rgba(7,59,143,.13);
+  --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:1000;background:rgba(7,59,143,.97);
+  backdrop-filter:blur(14px);box-shadow:0 5px 25px rgba(0,0,0,.12);
+  border-bottom:4px solid var(--yellow)
+}
+.navbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.logo{font-family:Syne,sans-serif;font-size:1.55rem;font-weight:800;color:#fff;letter-spacing:-1px}
+.logo span{color:var(--yellow)}
+nav ul{display:flex;list-style:none;gap:7px}
+nav a{display:block;color:#fff;font-weight:700;padding:11px 15px;border-radius:10px;transition:.25s}
+nav a:hover,nav a.active{background:var(--red);color:#fff}
+.menu{display:none;border:0;background:var(--yellow);color:var(--blue);font-weight:800;padding:10px 15px;border-radius:9px;cursor:pointer}
+
+/* Hero */
+.hero{
+  position:relative;isolation:isolate;overflow:hidden;
+  min-height:470px;display:grid;place-items:center;text-align:center;
+  background:linear-gradient(135deg,#04265f 0%,#073b8f 48%,#1264c3 100%);
+  color:#fff;
+}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;z-index:-1}
+.hero:before{width:420px;height:420px;background:var(--yellow);opacity:.12;top:-210px;left:-120px}
+.hero:after{width:360px;height:360px;background:var(--red);opacity:.16;right:-120px;bottom:-180px}
+.hero-content{max-width:820px;padding:80px 0}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,210,31,.16);
+  border:1px solid rgba(255,230,107,.55);color:var(--yellow2);
+  padding:8px 16px;border-radius:999px;font-weight:800;margin-bottom:20px
+}
+.hero h1{font-family:Syne,sans-serif;font-size:clamp(2.7rem,7vw,5.5rem);line-height:1.02;letter-spacing:-3px;margin-bottom:20px}
+.hero h1 span{color:var(--yellow)}
+.hero p{font-size:1.12rem;color:#eaf2ff;max-width:700px;margin:0 auto 30px}
+.hero-buttons{display:flex;justify-content:center;gap:13px;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 21px;border-radius:12px;font-weight:800;transition:.25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.18)}
+.btn-yellow{background:var(--yellow);color:var(--blue)}
+.btn-red{background:var(--red);color:#fff}
+.btn-outline{border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(255,255,255,.08)}
+
+/* Section */
+section{padding:85px 0}
+.section-head{text-align:center;max-width:760px;margin:0 auto 45px}
+.kicker{color:var(--red);font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:2px;margin-bottom:9px}
+.section-head h2{font-family:Syne,sans-serif;font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:14px}
+.section-head p{color:var(--muted)}
+
+/* Contact cards */
+.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.quick-card{
+ background:#fff;border:1px solid var(--line);border-radius:18px;padding:27px 22px;
+ box-shadow:0 8px 28px rgba(16,24,40,.05);transition:.3s
+}
+.quick-card:hover{transform:translateY(-7px);box-shadow:var(--shadow);border-color:#c8d7f2}
+.icon{
+ width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+ background:var(--blue3);font-size:1.45rem;margin-bottom:16px
+}
+.quick-card:nth-child(2) .icon{background:#fff4b5}
+.quick-card:nth-child(3) .icon{background:#ffe5e6}
+.quick-card:nth-child(4) .icon{background:#e5f6ed}
+.quick-card h3{margin-bottom:6px}
+.quick-card p,.quick-card a{color:var(--muted);font-size:.94rem}
+.quick-card a:hover{color:var(--red);font-weight:700}
+
+/* Booking area */
+.booking{background:linear-gradient(180deg,#fff 0%,#f3f7ff 100%)}
+.booking-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:stretch}
+.info-panel{
+ background:linear-gradient(155deg,var(--blue),#04265f);color:#fff;border-radius:var(--radius);
+ padding:38px;position:relative;overflow:hidden
+}
+.info-panel:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;right:-100px;bottom:-110px;background:var(--red);opacity:.28}
+.info-panel h2{font-family:Syne,sans-serif;font-size:2rem;line-height:1.15;margin-bottom:14px}
+.info-panel>p{color:#dce9ff;margin-bottom:27px}
+.check-list{list-style:none;display:grid;gap:15px;margin-bottom:30px}
+.check-list li{display:flex;gap:11px;align-items:flex-start}
+.check{width:24px;height:24px;flex:0 0 24px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);color:var(--blue);font-weight:900}
+.info-mini{border-top:1px solid rgba(255,255,255,.2);padding-top:22px}
+.info-mini strong{display:block;color:var(--yellow);margin-bottom:4px}
+
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:35px;box-shadow:var(--shadow)}
+.form-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:25px}
+.form-top h2{font-family:Syne,sans-serif;font-size:1.8rem}
+.form-top p{color:var(--muted);font-size:.92rem;margin-top:3px}
+.required{font-size:.78rem;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-weight:700;font-size:.9rem}
+input,select,textarea{
+ width:100%;border:1px solid #d0d5dd;border-radius:11px;padding:13px 14px;
+ outline:none;background:#fff;color:var(--ink);transition:.2s
+}
+input:focus,select:focus,textarea:focus{border-color:var(--blue2);box-shadow:0 0 0 4px rgba(11,86,199,.1)}
+textarea{resize:vertical;min-height:125px}
+.form-actions{display:flex;align-items:center;gap:15px;flex-wrap:wrap;margin-top:20px}
+.submit{background:var(--red);color:#fff}
+.note{color:var(--muted);font-size:.82rem}
+
+/* Services */
+.services{background:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{
+ border:1px solid var(--line);border-radius:18px;padding:26px;background:#fff;position:relative;overflow:hidden;transition:.3s
+}
+.service:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--blue)}
+.service:nth-child(2):before{background:var(--yellow)}
+.service:nth-child(3):before{background:var(--red)}
+.service:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.service .number{font-family:Syne,sans-serif;font-size:2.2rem;color:#d9e5f8}
+.service h3{margin:5px 0 8px;font-size:1.15rem}
+.service p{color:var(--muted);font-size:.93rem}
+
+/* Location */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.location-card{
+ background:var(--blue);color:#fff;border-radius:var(--radius);padding:35px;min-height:330px;
+ display:flex;flex-direction:column;justify-content:center
+}
+.location-card h2{font-family:Syne,sans-serif;font-size:2rem;margin-bottom:14px}
+.location-card p{color:#e0ebff;margin-bottom:18px}
+.location-details{display:grid;gap:12px}
+.location-details div{display:flex;gap:12px;align-items:flex-start}
+.map-box{
+ min-height:330px;border-radius:var(--radius);border:1px solid var(--line);
+ background:
+ radial-gradient(circle at 20% 30%,rgba(255,210,31,.8) 0 8px,transparent 9px),
+ radial-gradient(circle at 70% 65%,rgba(215,25,32,.8) 0 9px,transparent 10px),
+ linear-gradient(135deg,#eaf2ff,#dce8f8);
+ display:grid;place-items:center;overflow:hidden;position:relative
+}
+.map-inner{text-align:center;background:#fff;padding:27px 35px;border-radius:18px;box-shadow:var(--shadow)}
+.map-inner .pin{font-size:2.5rem}
+.map-inner strong{display:block;font-size:1.1rem;margin:5px 0}
+.map-inner span{color:var(--muted);font-size:.9rem}
+
+/* FAQ */
+.faq{background:#fff}
+.faq-list{max-width:850px;margin:auto;display:grid;gap:12px}
+details{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:0 20px}
+summary{cursor:pointer;list-style:none;font-weight:800;padding:20px 0;position:relative;padding-right:35px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:0;color:var(--red);font-size:1.5rem;top:15px}
+details[open] summary:after{content:"−"}
+details p{color:var(--muted);padding:0 0 20px}
+
+/* CTA */
+.cta{padding:70px 0}
+.cta-box{
+ background:linear-gradient(135deg,var(--blue),#04265f);color:#fff;border-radius:28px;
+ padding:55px;display:flex;align-items:center;justify-content:space-between;gap:30px;position:relative;overflow:hidden
+}
+.cta-box:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:var(--yellow);opacity:.09;right:-90px;top:-120px}
+.cta-box h2{font-family:Syne,sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;margin-bottom:8px}
+.cta-box p{color:#dbe8ff;max-width:620px}
+
+/* Footer */
+footer{background:#031b43;color:#dbe8ff;padding:55px 0 25px;border-top:5px solid var(--red)}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:35px}
+footer h3{font-family:Syne,sans-serif;color:#fff;margin-bottom:12px}
+footer p,footer a{color:#b9cbed;font-size:.93rem}
+footer a{display:block;margin:7px 0}
+footer a:hover{color:var(--yellow)}
+.footer-logo{font-family:Syne,sans-serif;color:#fff;font-size:1.5rem}
+.footer-logo span{color:var(--yellow)}
+.copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:35px;padding-top:20px;text-align:center;color:#91a9d2;font-size:.85rem}
+
+/* Floating WhatsApp */
+.whatsapp{
+ position:fixed;right:20px;bottom:20px;z-index:900;width:58px;height:58px;border-radius:50%;
+ background:#19a957;color:#fff;display:grid;place-items:center;font-size:1.55rem;
+ box-shadow:0 12px 28px rgba(0,0,0,.25);transition:.25s
+}
+.whatsapp:hover{transform:scale(1.08)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:950px){
+ .quick-grid{grid-template-columns:1fr 1fr}
+ .booking-grid,.location-grid{grid-template-columns:1fr}
+ .service-grid{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .cta-box{display:block}
+ .cta-box .hero-buttons{justify-content:flex-start;margin-top:25px}
+}
+@media(max-width:760px){
+ .navbar{min-height:70px}
+ .menu{display:block}
+ nav{display:none;position:absolute;left:0;right:0;top:70px;background:var(--blue);padding:12px 4%;border-bottom:4px solid var(--yellow)}
+ nav.open{display:block}
+ nav ul{display:grid;gap:3px}
+ nav a{padding:13px}
+ .hero{min-height:440px}
+ .hero h1{letter-spacing:-2px}
+ .hero-content{padding:65px 0}
+ section{padding:65px 0}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+ .form-card,.info-panel{padding:25px}
+ .cta-box{padding:35px 25px}
+}
+@media(max-width:560px){
+ .wrap{width:min(94%,1160px)}
+ .quick-grid,.service-grid,.footer-grid{grid-template-columns:1fr}
+ .hero h1{font-size:2.65rem}
+ .hero p{font-size:1rem}
+ .hero-buttons{flex-direction:column;align-items:stretch}
+ .hero-buttons .btn{width:100%}
+ .form-top{display:block}
+ .required{display:block;margin-top:8px}
+ .location-card,.map-box{min-height:280px}
+ .whatsapp{width:52px;height:52px;right:14px;bottom:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{scroll-behavior:auto!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="wrap navbar">
+    <a class="logo" href="index.html">TJ Shutter<span>vibes</span></a>
+    <button class="menu" id="menuBtn" aria-expanded="false" aria-controls="mainNav">☰ Menu</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a class="active" href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-content">
+    <div class="badge">📸 Let's Create Something Memorable</div>
+    <h1>Let's Talk About Your <span>Next Shoot</span></h1>
+    <p>Whether you are planning a wedding, graduation, portrait session, event or creative project, TJ Shuttervibes is ready to turn your important moments into photographs you can keep for years.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-yellow" href="#booking">Book a Session →</a>
+      <a class="btn btn-outline" href="https://wa.me/254745550094" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Reach Us</div>
+      <h2>Choose the easiest way to connect</h2>
+      <p>Have a question, want a quotation, or ready to reserve a date? Use any of the options below and we will guide you through the next step.</p>
+    </div>
+    <div class="quick-grid">
+      <article class="quick-card reveal">
+        <div class="icon">📞</div><h3>Call Us</h3>
+        <p>Speak directly with the photography team.</p>
+        <a href="tel:+254745550094">+254 745 550 094</a>
+      </article>
+      <article class="quick-card reveal">
+        <div class="icon">💬</div><h3>WhatsApp</h3>
+        <p>Send your shoot details and receive a quick response.</p>
+        <a href="https://wa.me/254745550094" target="_blank" rel="noopener">Start WhatsApp Chat</a>
+      </article>
+      <article class="quick-card reveal">
+        <div class="icon">📍</div><h3>Visit Us</h3>
+        <p>Find us in Homa Bay County along Tom Mboya University Street.</p>
+        <a href="#location">View Location</a>
+      </article>
+      <article class="quick-card reveal">
+        <div class="icon">📅</div><h3>Book Ahead</h3>
+        <p>Reserve your preferred date early, especially for busy seasons.</p>
+        <a href="#booking">Make a Booking</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Photography Booking</div>
+      <h2>Tell us what you have in mind</h2>
+      <p>Complete the form and your request will be prepared as a WhatsApp message for direct communication with TJ Shuttervibes.</p>
+    </div>
+
+    <div class="booking-grid">
+      <aside class="info-panel reveal">
+        <h2>Why book with TJ Shuttervibes?</h2>
+        <p>We focus on more than simply taking pictures. We work to capture genuine expressions, important details, atmosphere and the story behind your occasion.</p>
+        <ul class="check-list">
+          <li><span class="check">✓</span><span>Professional and creative photography for different occasions.</span></li>
+          <li><span class="check">✓</span><span>Personalized sessions based on your preferred style and location.</span></li>
+          <li><span class="check">✓</span><span>Clear communication before, during and after your shoot.</span></li>
+          <li><span class="check">✓</span><span>Convenient booking through phone and WhatsApp.</span></li>
+        </ul>
+        <div class="info-mini">
+          <strong>Location</strong>
+          Homa Bay County, Tom Mboya University Street
+        </div>
+      </aside>
+
+      <div class="form-card reveal">
+        <div class="form-top">
+          <div><h2>Booking Request</h2><p>Fields marked * are required.</p></div>
+          <span class="required">Secure & direct contact</span>
+        </div>
+
+        <form id="bookingForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Full Name *</label>
+              <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number *</label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+254 7XX XXX XXX">
+            </div>
+            <div class="field">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="type">Type of Shoot *</label>
+              <select id="type" name="type" required>
+                <option value="">Select a service</option>
+                <option>Portrait Photography</option>
+                <option>Wedding Photography</option>
+                <option>Event Photography</option>
+                <option>Graduation Photography</option>
+                <option>Lifestyle Photography</option>
+                <option>Creative / Branding</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="date">Preferred Date</label>
+              <input id="date" name="date" type="date">
+            </div>
+            <div class="field">
+              <label for="location">Shoot Location</label>
+              <input id="location" name="location" type="text" placeholder="Where should the shoot take place?">
+            </div>
+            <div class="field full">
+              <label for="message">Tell us about your shoot</label>
+              <textarea id="message" name="message" placeholder="Tell us about the occasion, number of people, preferred style, timing, package ideas or anything else we should know."></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn submit" type="submit">Send Booking via WhatsApp →</button>
+            <span class="note" id="formStatus" role="status">Your request will open directly in WhatsApp.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">What We Cover</div>
+      <h2>Photography for your important moments</h2>
+      <p>From individual portraits to celebrations and creative projects, choose a service that fits your occasion.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service reveal"><div class="number">01</div><h3>Portraits</h3><p>Personal portraits, professional profile images, birthday sessions and creative individual photography.</p></article>
+      <article class="service reveal"><div class="number">02</div><h3>Weddings</h3><p>Capture the ceremony, preparations, family moments, couple portraits and the atmosphere of your special day.</p></article>
+      <article class="service reveal"><div class="number">03</div><h3>Events</h3><p>Photography coverage for parties, launches, conferences, church events, celebrations and community occasions.</p></article>
+      <article class="service reveal"><div class="number">04</div><h3>Graduations</h3><p>Celebrate your achievement with individual portraits, family photographs, group sessions and memorable details.</p></article>
+      <article class="service reveal"><div class="number">05</div><h3>Lifestyle</h3><p>Natural photographs that capture personality, relationships, everyday experiences and meaningful moments.</p></article>
+      <article class="service reveal"><div class="number">06</div><h3>Creative & Branding</h3><p>Visual content for creators, businesses, personal brands, promotional materials and creative concepts.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="location">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Our Location</div>
+      <h2>Find TJ Shuttervibes</h2>
+      <p>Our photography services are based in Homa Bay County, with our listed location along Tom Mboya University Street.</p>
+    </div>
+    <div class="location-grid">
+      <div class="location-card reveal">
+        <h2>Come and Let's Create</h2>
+        <p>For directions, availability, outdoor sessions or location-based photography, contact us before visiting so we can coordinate your session.</p>
+        <div class="location-details">
+          <div><span>📍</span><span><strong>Homa Bay County</strong><br>Tom Mboya University Street</span></div>
+          <div><span>📞</span><span><strong>+254 745 5500 941</strong><br>Call for bookings and enquiries</span></div>
+          <div><span>💬</span><span><strong>WhatsApp Available</strong><br>Send your requirements directly</span></div>
+        </div>
+      </div>
+      <div class="map-box reveal">
+        <div class="map-inner">
+          <div class="pin">📍</div>
+          <strong>Tom Mboya University Street</strong>
+          <span>Homa Bay County, Kenya</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Questions</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Some quick answers before you make your booking.</p>
+    </div>
+    <div class="faq-list">
+      <details class="reveal"><summary>How do I book a photography session?</summary><p>Fill in the booking form above and submit it. Your details will be prepared in WhatsApp so you can communicate directly with TJ Shuttervibes and discuss availability and requirements.</p></details>
+      <details class="reveal"><summary>Can you photograph events outside Homa Bay?</summary><p>Travel and location arrangements can be discussed before confirming the booking. Contact us with the event location, date and type of photography required.</p></details>
+      <details class="reveal"><summary>What information should I provide when booking?</summary><p>Include your name, phone number, type of shoot, preferred date, location, approximate number of people and any special photography requirements.</p></details>
+      <details class="reveal"><summary>Can I request a customized photography package?</summary><p>Yes. Share the type of occasion, coverage duration, location and photography expectations so the available options can be discussed with you.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <div>
+        <h2>Your moment deserves to be remembered.</h2>
+        <p>Ready to plan your next photography session? Contact TJ Shuttervibes today and let's turn your ideas into meaningful photographs.</p>
+      </div>
+      <div class="hero-buttons">
+        <a class="btn btn-yellow" href="tel:+254745550094">📞 Call Now</a>
+        <a class="btn btn-red" href="https://wa.me/254745550094" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">TJ Shutter<span>vibes</span></div>
+        <p style="margin-top:12px">Your moments. Our lens. Your story.</p>
+        <p style="margin-top:8px">Professional and creative photography based in Homa Bay County.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+254745550094">+254 745 550 094</a>
+        <a href="https://wa.me/254745550094" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#location">Homa Bay County</a>
+        <a href="#location">Along Tom Mboya University Street</a>
+      </div>
+    </div>
+    <div class="copyright">&copy; 2026 TJ Shuttervibes. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/254745550094" target="_blank" rel="noopener" aria-label="Chat with TJ Shuttervibes on WhatsApp">💬</a>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const nav=document.getElementById("mainNav");
+
+menuBtn.addEventListener("click",()=>{
+  const open=nav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",open);
+});
+
+document.querySelectorAll("#mainNav a").forEach(link=>{
+  link.addEventListener("click",()=>nav.classList.remove("open"));
+});
+
+const dateInput=document.getElementById("date");
+const today=new Date();
+const yyyy=today.getFullYear();
+const mm=String(today.getMonth()+1).padStart(2,"0");
+const dd=String(today.getDate()).padStart(2,"0");
+dateInput.min=`${yyyy}-${mm}-${dd}`;
+
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value.trim();
+  const phone=document.getElementById("phone").value.trim();
+  const email=document.getElementById("email").value.trim() || "Not provided";
+  const type=document.getElementById("type").value;
+  const date=document.getElementById("date").value || "Not specified";
+  const location=document.getElementById("location").value.trim() || "Not specified";
+  const message=document.getElementById("message").value.trim() || "No additional details";
+
+  const text =
+`📸 TJ SHUTTERVIBES BOOKING REQUEST
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Shoot Type: ${type}
+Preferred Date: ${date}
+Location: ${location}
+
+Message:
+${message}
+
+Please confirm availability and booking details.`;
+
+  const status=document.getElementById("formStatus");
+  status.textContent="Opening WhatsApp…";
+  window.open("https://wa.me/254745550094?text="+encodeURIComponent(text),"_blank","noopener");
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add("show");
+  });
+},{threshold:.1});
+
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
