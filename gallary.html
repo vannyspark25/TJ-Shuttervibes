@@ -1,0 +1,1313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gallery | TJ Shuttervibes Photography</title>
+
+  <meta name="description"
+    content="Explore the TJ Shuttervibes photography gallery featuring portraits, weddings, graduations, events, lifestyle and creative photography.">
+
+  <meta name="theme-color" content="#101010">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #101010;
+      --surface: #191919;
+      --gold: #d9b46b;
+      --white: #ffffff;
+      --muted: #aaaaaa;
+      --border: rgba(255,255,255,.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.6;
+    }
+
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(16,16,16,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      min-height: 78px;
+      padding: 14px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: "Syne", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -.5px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #dedede;
+      font-size: .92rem;
+      transition: color .25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+      padding: 10px 17px;
+      border-radius: 3px;
+    }
+
+    .nav-toggle {
+      display: none;
+      color: white;
+      background: none;
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 1.3rem;
+    }
+
+    /* PAGE INTRO */
+
+    .hero {
+      padding: 85px 20px 55px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top, rgba(217,180,107,.12), transparent 65%);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-family: "Syne", sans-serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin: 15px 0 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+      font-size: 1rem;
+    }
+
+    .hero-line {
+      width: 65px;
+      height: 3px;
+      background: var(--gold);
+      margin: 28px auto 0;
+    }
+
+    /* GALLERY SECTION */
+
+    .gallery-section {
+      max-width: 1450px;
+      margin: auto;
+      padding: 20px 5% 100px;
+    }
+
+    .gallery-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .gallery-heading h2 {
+      font-family: "Syne", sans-serif;
+      font-size: 1.5rem;
+    }
+
+    .photo-count {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* CATEGORY FILTERS */
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 auto 38px;
+    }
+
+    .filter-btn {
+      border: 1px solid #393939;
+      background: transparent;
+      color: #ccc;
+      padding: 10px 19px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: .25s;
+      font-size: .88rem;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      color: #111;
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* MASONRY LAYOUT */
+
+    .gallery-grid {
+      columns: 4;
+      column-gap: 18px;
+    }
+
+    .gallery-card {
+      display: inline-block;
+      width: 100%;
+      margin: 0 0 18px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border-radius: 5px;
+      break-inside: avoid;
+      cursor: pointer;
+      animation: fadeIn .45s ease both;
+    }
+
+    .gallery-card.hidden {
+      display: none;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      min-height: 180px;
+      object-fit: cover;
+      transition: transform .55s ease, filter .4s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.055);
+      filter: brightness(.72);
+    }
+
+    .photo-overlay {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 38px 17px 17px;
+      background: linear-gradient(transparent, rgba(0,0,0,.88));
+      opacity: 0;
+      transform: translateY(8px);
+      transition: .3s;
+      pointer-events: none;
+    }
+
+    .gallery-card:hover .photo-overlay,
+    .gallery-card:focus-visible .photo-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-overlay h3 {
+      font-family: "Syne", sans-serif;
+      font-size: 1rem;
+      margin-bottom: 3px;
+    }
+
+    .photo-overlay p {
+      color: var(--gold);
+      font-size: .78rem;
+    }
+
+    .view-icon {
+      position: absolute;
+      top: 13px;
+      right: 13px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0,0,0,.65);
+      color: white;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      transition: .3s;
+      pointer-events: none;
+    }
+
+    .gallery-card:hover .view-icon {
+      opacity: 1;
+    }
+
+    /* BOOKING BANNER */
+
+    .booking {
+      margin-top: 75px;
+      padding: 55px 25px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .booking h2 {
+      font-family: "Syne", sans-serif;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      margin-bottom: 12px;
+    }
+
+    .booking h2 span {
+      color: var(--gold);
+    }
+
+    .booking p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 0 auto 25px;
+    }
+
+    .gold-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #111;
+      padding: 13px 25px;
+      border: 1px solid var(--gold);
+      font-weight: 700;
+      border-radius: 3px;
+      transition: .25s;
+    }
+
+    .gold-btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 5%;
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(0,0,0,.96);
+      align-items: center;
+      justify-content: center;
+      padding: 65px 65px 50px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .lightbox img {
+      max-width: min(100%, 1050px);
+      max-height: 76vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .lightbox-caption {
+      text-align: center;
+      padding-top: 15px;
+    }
+
+    .lightbox-caption h3 {
+      font-family: "Syne", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .lightbox-caption p {
+      color: var(--gold);
+      font-size: .85rem;
+      margin-top: 3px;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.2);
+      color: white;
+      background: rgba(30,30,30,.8);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .lightbox-close {
+      top: 18px;
+      right: 22px;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      font-size: 1.7rem;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 58px;
+      border-radius: 4px;
+      font-size: 2rem;
+    }
+
+    .lightbox-prev {
+      left: 15px;
+    }
+
+    .lightbox-next {
+      right: 15px;
+    }
+
+    .lightbox-counter {
+      color: #aaa;
+      font-size: .8rem;
+      margin-top: 8px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1100px) {
+      .gallery-grid {
+        columns: 3;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        min-height: 70px;
+        padding: 12px 5%;
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 5px 0 12px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 5px;
+      }
+
+      .nav-cta {
+        display: inline-block !important;
+        text-align: center;
+        margin-top: 7px;
+      }
+
+      .hero {
+        padding: 65px 20px 45px;
+      }
+
+      .gallery-section {
+        padding: 15px 4% 65px;
+      }
+
+      .gallery-grid {
+        columns: 2;
+        column-gap: 12px;
+      }
+
+      .gallery-card {
+        margin-bottom: 12px;
+      }
+
+      .gallery-card img {
+        min-height: 130px;
+      }
+
+      .photo-overlay {
+        opacity: 1;
+        transform: none;
+        padding: 30px 10px 10px;
+      }
+
+      .photo-overlay h3 {
+        font-size: .82rem;
+      }
+
+      .photo-overlay p {
+        font-size: .7rem;
+      }
+
+      .view-icon {
+        display: none;
+      }
+
+      .booking {
+        margin-top: 45px;
+        padding: 40px 20px;
+      }
+
+      .lightbox {
+        padding: 60px 12px 30px;
+      }
+
+      .lightbox img {
+        max-height: 70vh;
+      }
+
+      .lightbox-prev,
+      .lightbox-next {
+        top: auto;
+        bottom: 12px;
+        transform: none;
+        width: 45px;
+        height: 45px;
+      }
+
+      .lightbox-prev {
+        left: calc(50% - 55px);
+      }
+
+      .lightbox-next {
+        right: calc(50% - 55px);
+      }
+
+      .lightbox-caption {
+        padding-bottom: 55px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .gallery-grid {
+        columns: 1;
+      }
+
+      .gallery-card img {
+        max-height: 480px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .gallery-heading h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <nav class="nav-inner" aria-label="Main navigation">
+
+      <a class="logo" href="index.html">
+        TJ <span>Shuttervibes</span>
+      </a>
+
+      <button class="nav-toggle"
+        id="navToggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="navLinks">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="nav-cta" href="contact.html">Book a Session</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- PAGE INTRO -->
+  <section class="hero">
+    <span class="eyebrow">Our Photography Collection</span>
+
+    <h1>Moments Into <span>Memories.</span></h1>
+
+    <p>
+      Every photograph tells a story. Explore our collection of portraits,
+      weddings, graduations, events and creative photography captured
+      with passion, imagination and attention to detail.
+    </p>
+
+    <div class="hero-line"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <main class="gallery-section">
+
+    <div class="gallery-heading">
+      <h2>Explore Our Gallery</h2>
+      <span class="photo-count" id="photoCount">30 photographs</span>
+    </div>
+
+    <!-- CATEGORY FILTERS -->
+    <div class="filters" role="group" aria-label="Filter gallery photographs">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">
+        All Photos
+      </button>
+      <button class="filter-btn" data-filter="portraits" aria-pressed="false">
+        Portraits
+      </button>
+      <button class="filter-btn" data-filter="weddings" aria-pressed="false">
+        Weddings
+      </button>
+      <button class="filter-btn" data-filter="graduations" aria-pressed="false">
+        Graduations
+      </button>
+      <button class="filter-btn" data-filter="events" aria-pressed="false">
+        Events
+      </button>
+      <button class="filter-btn" data-filter="lifestyle" aria-pressed="false">
+        Lifestyle
+      </button>
+      <button class="filter-btn" data-filter="creative" aria-pressed="false">
+        Creative
+      </button>
+    </div>
+
+    <!--
+      IMAGE FOLDER:
+      images/gallery/
+
+      Add your 30 photographs using the filenames below.
+      Keep the filenames and folder names exactly as written.
+    -->
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- PORTRAITS: 01–05 -->
+
+      <article class="gallery-card" data-category="portraits" tabindex="0"
+        role="button" aria-label="View Portrait Session 01">
+        <img src="g6.jpeg"
+          alt="Portrait photography session 01" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Portrait Session 01</h3>
+          <p>Portraits</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="portraits" tabindex="0"
+        role="button" aria-label="View Portrait Session 02">
+        <img src="c6.jpeg"
+          alt="Portrait photography session 02" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Portrait Session 02</h3>
+          <p>Portraits</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="portraits" tabindex="0"
+        role="button" aria-label="View Portrait Session 03">
+        <img src="39.jpeg"
+          alt="Portrait photography session 03" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Portrait Session 03</h3>
+          <p>Portraits</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="portraits" tabindex="0"
+        role="button" aria-label="View Portrait Session 04">
+        <img src="35.jpeg"
+          alt="Portrait photography session 04" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Portrait Session 04</h3>
+          <p>Portraits</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="portraits" tabindex="0"
+        role="button" aria-label="View Portrait Session 05">
+        <img src="34.jpeg"
+          alt="Portrait photography session 05" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Portrait Session 05</h3>
+          <p>Portraits</p>
+        </div>
+      </article>
+
+      <!-- WEDDINGS: 06–10 -->
+
+      <article class="gallery-card" data-category="weddings" tabindex="0"
+        role="button" aria-label="View Wedding Story 01">
+        <img src="33.jpeg"
+          alt="Wedding photography story 01" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Wedding Story 01</h3>
+          <p>Weddings</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="weddings" tabindex="0"
+        role="button" aria-label="View Wedding Story 02">
+        <img src="31.jpeg"
+          alt="Wedding photography story 02" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Wedding Story 02</h3>
+          <p>Weddings</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="weddings" tabindex="0"
+        role="button" aria-label="View Wedding Story 03">
+        <img src="30.jpeg"
+          alt="Wedding photography story 03" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Wedding Story 03</h3>
+          <p>Weddings</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="weddings" tabindex="0"
+        role="button" aria-label="View Wedding Story 04">
+        <img src="28.jpeg"
+          alt="Wedding photography story 04" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Wedding Story 04</h3>
+          <p>Weddings</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="weddings" tabindex="0"
+        role="button" aria-label="View Wedding Story 05">
+        <img src="27.jpeg"
+          alt="Wedding photography story 05" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Wedding Story 05</h3>
+          <p>Weddings</p>
+        </div>
+      </article>
+
+      <!-- GRADUATIONS: 11–15 -->
+
+      <article class="gallery-card" data-category="graduations" tabindex="0"
+        role="button" aria-label="View Graduation Session 01">
+        <img src="25.jpeg"
+          alt="Graduation photography session 01" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Graduation Session 01</h3>
+          <p>Graduations</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="graduations" tabindex="0"
+        role="button" aria-label="View Graduation Session 02">
+        <img src="24.jpeg"
+          alt="Graduation photography session 02" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Graduation Session 02</h3>
+          <p>Graduations</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="graduations" tabindex="0"
+        role="button" aria-label="View Graduation Session 03">
+        <img src="57.jpeg"
+          alt="Graduation photography session 03" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Graduation Session 03</h3>
+          <p>Graduations</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="graduations" tabindex="0"
+        role="button" aria-label="View Graduation Session 04">
+        <img src="56.jpeg"
+          alt="Graduation photography session 04" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Graduation Session 04</h3>
+          <p>Graduations</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="graduations" tabindex="0"
+        role="button" aria-label="View Graduation Session 05">
+        <img src="55.jpeg"
+          alt="Graduation photography session 05" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Graduation Session 05</h3>
+          <p>Graduations</p>
+        </div>
+      </article>
+
+      <!-- EVENTS: 16–20 -->
+
+      <article class="gallery-card" data-category="events" tabindex="0"
+        role="button" aria-label="View Event Photography 01">
+        <img src="54.jpeg"
+          alt="Event photography 01" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Event Photography 01</h3>
+          <p>Events</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="events" tabindex="0"
+        role="button" aria-label="View Event Photography 02">
+        <img src="53.jpeg"
+          alt="Event photography 02" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Event Photography 02</h3>
+          <p>Events</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="events" tabindex="0"
+        role="button" aria-label="View Event Photography 03">
+        <img src="52.jpeg"
+          alt="Event photography 03" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Event Photography 03</h3>
+          <p>Events</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="events" tabindex="0"
+        role="button" aria-label="View Event Photography 04">
+        <img src="51.jpeg"
+          alt="Event photography 04" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Event Photography 04</h3>
+          <p>Events</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="events" tabindex="0"
+        role="button" aria-label="View Event Photography 05">
+        <img src="50.jpeg"
+          alt="Event photography 05" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Event Photography 05</h3>
+          <p>Events</p>
+        </div>
+      </article>
+
+      <!-- LIFESTYLE: 21–25 -->
+
+      <article class="gallery-card" data-category="lifestyle" tabindex="0"
+        role="button" aria-label="View Lifestyle Session 01">
+        <img src="49.jpeg"
+          alt="Lifestyle photography session 01" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Lifestyle Session 01</h3>
+          <p>Lifestyle</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="lifestyle" tabindex="0"
+        role="button" aria-label="View Lifestyle Session 02">
+        <img src="48.jpeg"
+          alt="Lifestyle photography session 02" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Lifestyle Session 02</h3>
+          <p>Lifestyle</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="lifestyle" tabindex="0"
+        role="button" aria-label="View Lifestyle Session 03">
+        <img src="47.jpeg"
+          alt="Lifestyle photography session 03" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Lifestyle Session 03</h3>
+          <p>Lifestyle</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="lifestyle" tabindex="0"
+        role="button" aria-label="View Lifestyle Session 04">
+        <img src="46.jpeg"
+          alt="Lifestyle photography session 04" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Lifestyle Session 04</h3>
+          <p>Lifestyle</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="lifestyle" tabindex="0"
+        role="button" aria-label="View Lifestyle Session 05">
+        <img src="45.jpeg"
+          alt="Lifestyle photography session 05" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Lifestyle Session 05</h3>
+          <p>Lifestyle</p>
+        </div>
+      </article>
+
+      <!-- CREATIVE: 26–30 -->
+
+      <article class="gallery-card" data-category="creative" tabindex="0"
+        role="button" aria-label="View Creative Photography 01">
+        <img src="44.jpg"
+          alt="Creative photography session 01" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Creative Photography 01</h3>
+          <p>Creative</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="creative" tabindex="0"
+        role="button" aria-label="View Creative Photography 02">
+        <img src="43.jpeg"
+          alt="Creative photography session 02" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Creative Photography 02</h3>
+          <p>Creative</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="creative" tabindex="0"
+        role="button" aria-label="View Creative Photography 03">
+        <img src="42.jpeg"
+          alt="Creative photography session 03" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Creative Photography 03</h3>
+          <p>Creative</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="creative" tabindex="0"
+        role="button" aria-label="View Creative Photography 04">
+        <img src="41.jpeg"
+          alt="Creative photography session 04" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Creative Photography 04</h3>
+          <p>Creative</p>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="creative" tabindex="0"
+        role="button" aria-label="View Creative Photography 05">
+        <img src="40.jpeg"
+          alt="Creative photography session 05" loading="lazy">
+        <div class="view-icon" aria-hidden="true">↗</div>
+        <div class="photo-overlay">
+          <h3>Creative Photography 05</h3>
+          <p>Creative</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- BOOKING SECTION -->
+    <section class="booking">
+      <h2>Your Story Deserves <span>Beautiful Photos.</span></h2>
+
+      <p>
+        Planning a graduation, wedding, portrait session or special event?
+        Let TJ Shuttervibes help you preserve those moments for a lifetime.
+      </p>
+
+      <a href="contact.html" class="gold-btn">Book Your Photoshoot ↗</a>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      &copy; <span id="year"></span>
+      <strong>TJ Shuttervibes.</strong>
+      All rights reserved.
+    </p>
+    <p>Every frame tells a story.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox"
+    role="dialog" aria-modal="true" aria-label="Photograph viewer">
+
+    <button class="lightbox-close" id="lightboxClose"
+      aria-label="Close photograph viewer">&times;</button>
+
+    <button class="lightbox-prev" id="lightboxPrev"
+      aria-label="Previous photograph">&#8249;</button>
+
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="">
+
+      <div class="lightbox-caption">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxCategory"></p>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+      </div>
+    </div>
+
+    <button class="lightbox-next" id="lightboxNext"
+      aria-label="Next photograph">&#8250;</button>
+
+  </div>
+
+  <script>
+    // MOBILE NAVIGATION
+    const navToggle = document.getElementById("navToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+
+      navToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation");
+        navToggle.textContent = "☰";
+      });
+    });
+
+    // AUTOMATIC COPYRIGHT YEAR
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // GALLERY ELEMENTS
+    const cards = Array.from(
+      document.querySelectorAll(".gallery-card")
+    );
+
+    const filters = document.querySelectorAll(".filter-btn");
+    const photoCount = document.getElementById("photoCount");
+
+    // FILTER PHOTOGRAPHS BY CATEGORY
+    filters.forEach(button => {
+      button.addEventListener("click", () => {
+        const selectedCategory = button.dataset.filter;
+
+        filters.forEach(filter => {
+          const active = filter === button;
+          filter.classList.toggle("active", active);
+          filter.setAttribute("aria-pressed", String(active));
+        });
+
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const matches =
+            selectedCategory === "all" ||
+            card.dataset.category === selectedCategory;
+
+          card.classList.toggle("hidden", !matches);
+
+          if (matches) visibleCount++;
+        });
+
+        photoCount.textContent =
+          `${visibleCount} photograph${visibleCount === 1 ? "" : "s"}`;
+      });
+    });
+
+    // LIGHTBOX ELEMENTS
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const lightboxCategory = document.getElementById("lightboxCategory");
+    const lightboxCounter = document.getElementById("lightboxCounter");
+
+    const closeButton = document.getElementById("lightboxClose");
+    const prevButton = document.getElementById("lightboxPrev");
+    const nextButton = document.getElementById("lightboxNext");
+
+    let visibleCards = [];
+    let currentIndex = 0;
+    let lastFocusedElement = null;
+    let touchStartX = 0;
+
+    function refreshVisibleCards() {
+      visibleCards = cards.filter(card =>
+        !card.classList.contains("hidden")
+      );
+    }
+
+    function openLightbox(card) {
+      refreshVisibleCards();
+
+      currentIndex = visibleCards.indexOf(card);
+
+      if (currentIndex < 0) return;
+
+      lastFocusedElement = document.activeElement;
+
+      lightbox.classList.add("open");
+      document.body.classList.add("no-scroll");
+
+      showPhoto(currentIndex);
+      closeButton.focus();
+    }
+
+    function showPhoto(index) {
+      if (!visibleCards.length) return;
+
+      currentIndex =
+        (index + visibleCards.length) % visibleCards.length;
+
+      const card = visibleCards[currentIndex];
+      const img = card.querySelector("img");
+      const title = card.querySelector(".photo-overlay h3");
+      const category = card.querySelector(".photo-overlay p");
+
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightboxTitle.textContent = title.textContent;
+      lightboxCategory.textContent = category.textContent;
+
+      lightboxCounter.textContent =
+        `${currentIndex + 1} of ${visibleCards.length}`;
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      document.body.classList.remove("no-scroll");
+
+      lightboxImage.removeAttribute("src");
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    function nextPhoto() {
+      showPhoto(currentIndex + 1);
+    }
+
+    function previousPhoto() {
+      showPhoto(currentIndex - 1);
+    }
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        openLightbox(card);
+      });
+
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox(card);
+        }
+      });
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    nextButton.addEventListener("click", nextPhoto);
+    prevButton.addEventListener("click", previousPhoto);
+
+    // CLOSE WHEN CLICKING THE DARK BACKGROUND
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // KEYBOARD CONTROLS
+    document.addEventListener("keydown", event => {
+      if (!lightbox.classList.contains("open")) return;
+
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowRight") nextPhoto();
+      if (event.key === "ArrowLeft") previousPhoto();
+    });
+
+    // MOBILE SWIPE CONTROLS
+    lightbox.addEventListener("touchstart", event => {
+      touchStartX = event.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener("touchend", event => {
+      const touchEndX = event.changedTouches[0].screenX;
+      const distance = touchEndX - touchStartX;
+
+      if (Math.abs(distance) < 60) return;
+
+      if (distance < 0) nextPhoto();
+      else previousPhoto();
+    }, { passive: true });
+  </script>
+
+</body>
+</html>
