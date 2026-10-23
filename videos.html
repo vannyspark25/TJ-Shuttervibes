@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Videos | TJ Shuttervibes</title>
+  <meta name="description" content="Explore 20 memorable videos from TJ Shuttervibes, capturing weddings, graduations, events and creative moments.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #F7F4EF;
+      --surface: #FFFFFF;
+      --text: #252525;
+      --muted: #706B64;
+      --accent: #D71920;
+      --accent-light: #F8DCDD;
+      --border: #E7E0D6;
+      --shadow: 0 12px 35px rgba(45, 35, 23, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 244, 239, 0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      color: var(--text);
+    }
+
+    .brand b {
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+    }
+
+    nav a {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      transition: color 0.2s;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--text);
+    }
+
+    nav a[aria-current="page"] {
+      font-weight: 700;
+    }
+
+    /* INTRODUCTION */
+    .intro {
+      padding: 78px 0 42px;
+    }
+
+    .tag {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    .info h2 {
+      font-family: "Playfair Display", serif;
+    }
+
+    h1 {
+      max-width: 850px;
+      font-size: clamp(2.5rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.13;
+      letter-spacing: -0.04em;
+      margin: 16px 0;
+      color: var(--accent);
+    }
+
+    h1 span {
+      color: var(--text);
+    }
+
+    .sub {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* VIDEO GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+      padding-bottom: 90px;
+    }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(45, 35, 23, 0.13);
+    }
+
+    .card video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      background: #E8E3DC;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .info span {
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      min-width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .info h2 {
+      color: var(--accent);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #292723;
+      color: #E9E3DA;
+      padding: 28px 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .footer-brand span {
+      color: #FF555D;
+    }
+
+    /* TABLET */
+    @media (max-width: 950px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bar {
+        padding: 14px 0;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .wrap {
+        width: calc(100% - 30px);
+      }
+
+      .bar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav ul {
+        gap: 8px 16px;
+      }
+
+      nav a {
+        font-size: 0.82rem;
+      }
+
+      .intro {
+        padding: 52px 0 30px;
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 10vw, 3.4rem);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding-bottom: 55px;
+      }
+
+      .info {
+        padding: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER AND NAVIGATION -->
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="index.html">
+        TJ Shutter<b>vibes</b>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="gallary.html">Gallery</a></li>
+          <li><a href="videos.html" aria-current="page">Videos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="wrap">
+
+      <section class="intro">
+        <p class="tag">TJ Shuttervibes · Video Gallery</p>
+
+        <h1>
+          Moments in motion.
+          <span>Memories that move.</span>
+        </h1>
+
+        <p class="sub">
+          Explore 20 memorable videos capturing beautiful celebrations,
+          achievements, creative shoots and unforgettable moments.
+          Every story deserves to be remembered.
+        </p>
+      </section>
+
+      <!-- EXACTLY 20 VIDEOS -->
+      <section class="grid" aria-label="All 20 featured videos">
+
+        <!-- VIDEO 1 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="vanny.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>01</span>
+            <h2>Wedding Highlights</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 2 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="vanny2.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>02</span>
+            <h2>Graduation Day</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 3 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny3.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>03</span>
+            <h2>Event Recap</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 4 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny4.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>04</span>
+            <h2>Behind the Scenes</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 5 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny5.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>05</span>
+            <h2>Portrait Session</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 6 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny6.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>06</span>
+            <h2>Lifestyle Shoot</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 7 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny7.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>07</span>
+            <h2>Creative Photography</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 8 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny8.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>08</span>
+            <h2>Family Moments</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 9 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny9.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>09</span>
+            <h2>Birthday Party</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 10 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny10.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>10</span>
+            <h2>Brand Photography</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 11 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny11.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>11</span>
+            <h2>Outdoor Photoshoot</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 12 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny12.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>12</span>
+            <h2>Couple Moments</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 13 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny13.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>13</span>
+            <h2>Travel Memories</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 14 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny14.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>14</span>
+            <h2>Fashion Shoot</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 15 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny15.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <div class="info">
+            <span>15</span>
+            <h2>Church Events</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 16 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny16.mp4" type="video/mp4">
+          </video>
+          <div class="info">
+            <span>16</span>
+            <h2>Nature in Motion</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 17 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny17.mp4" type="video/mp4">
+          </video>
+          <div class="info">
+            <span>17</span>
+            <h2>Special Celebrations</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 18 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny18.mp4" type="video/mp4">
+          </video>
+          <div class="info">
+            <span>18</span>
+            <h2>Professional Events</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 19 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny19.mp4" type="video/mp4">
+          </video>
+          <div class="info">
+            <span>19</span>
+            <h2>Creative Films</h2>
+          </div>
+        </article>
+
+        <!-- VIDEO 20 -->
+        <article class="card">
+          <video controls preload="metadata" playsinline>
+            <source src="videos/vanny20.mp4" type="video/mp4">
+          </video>
+          <div class="info">
+            <span>20</span>
+            <h2>Best Moments Reel</h2>
+          </div>
+        </article>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap footer-inner">
+      <strong class="footer-brand">
+        TJ Shutter<span>vibes</span>
+      </strong>
+
+      <span>We Capture Moments. You Keep the Memories.</span>
+
+      <span>
+        &copy; <span id="year"></span>
+        TJ Shuttervibes. Your moments. Our lens. Your story.
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    // Display the current year.
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Pause other videos when one starts playing.
+    const videos = document.querySelectorAll(".card video");
+
+    videos.forEach(video => {
+      video.addEventListener("play", () => {
+        videos.forEach(otherVideo => {
+          if (otherVideo !== video) {
+            otherVideo.pause();
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
