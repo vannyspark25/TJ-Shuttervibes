@@ -133,6 +133,14 @@ textarea{resize:vertical;min-height:125px}
 .submit{background:var(--red);color:#fff}
 .note{color:var(--muted);font-size:.82rem}
 
+/* Preferred time selector */
+.time-selects{
+ display:grid;
+ grid-template-columns:1fr 1fr .9fr;
+ gap:10px;
+}
+.time-help{color:var(--muted);font-size:.82rem;margin-top:3px}
+
 /* Services */
 .services{background:#fff}
 .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -249,6 +257,8 @@ footer a:hover{color:var(--yellow)}
  .required{display:block;margin-top:8px}
  .location-card,.map-box{min-height:280px}
  .whatsapp{width:52px;height:52px;right:14px;bottom:14px}
+ .time-selects{grid-template-columns:1fr 1fr 1fr;gap:7px}
+ .time-selects select{padding:12px 7px}
 }
 @media(prefers-reduced-motion:reduce){
  *{scroll-behavior:auto!important;transition:none!important}
@@ -269,7 +279,7 @@ footer a:hover{color:var(--yellow)}
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a class="active" href="contact.html" aria-current="page">Contact</a></li>
-        <li><a href="gallary.html">Gallary</a></li>
+        <li><a href="gallary.html">Gallery</a></li>
         <li><a href="videos.html">Videos</a></li>
       </ul>
     </nav>
@@ -357,14 +367,17 @@ footer a:hover{color:var(--yellow)}
               <label for="name">Full Name *</label>
               <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your full name">
             </div>
+
             <div class="field">
               <label for="phone">Phone Number *</label>
               <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+254 7XX XXX XXX">
             </div>
+
             <div class="field">
               <label for="email">Email Address</label>
               <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com">
             </div>
+
             <div class="field">
               <label for="type">Type of Shoot *</label>
               <select id="type" name="type" required>
@@ -378,19 +391,67 @@ footer a:hover{color:var(--yellow)}
                 <option>Other</option>
               </select>
             </div>
+
             <div class="field">
               <label for="date">Preferred Date</label>
               <input id="date" name="date" type="date">
             </div>
+
             <div class="field">
               <label for="location">Shoot Location</label>
               <input id="location" name="location" type="text" placeholder="Where should the shoot take place?">
             </div>
+
+            <div class="field full">
+              <label>Preferred Booking Time</label>
+              <div class="time-selects">
+                <select id="timeHour" name="timeHour" aria-label="Preferred hour">
+                  <option value="">Hour</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+
+                <select id="timeMinute" name="timeMinute" aria-label="Preferred minute">
+                  <option value="">Minute</option>
+                  <option value="00">00</option>
+                  <option value="05">05</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="25">25</option>
+                  <option value="30">30</option>
+                  <option value="35">35</option>
+                  <option value="40">40</option>
+                  <option value="45">45</option>
+                  <option value="50">50</option>
+                  <option value="55">55</option>
+                </select>
+
+                <select id="timePeriod" name="timePeriod" aria-label="AM or PM">
+                  <option value="">AM/PM</option>
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+              </div>
+              <p class="time-help">Choose your preferred hour, minute and AM/PM. This is optional.</p>
+            </div>
+
             <div class="field full">
               <label for="message">Tell us about your shoot</label>
               <textarea id="message" name="message" placeholder="Tell us about the occasion, number of people, preferred style, timing, package ideas or anything else we should know."></textarea>
             </div>
           </div>
+
           <div class="form-actions">
             <button class="btn submit" type="submit">Send Booking via WhatsApp →</button>
             <span class="note" id="formStatus" role="status">Your request will open directly in WhatsApp.</span>
@@ -432,7 +493,7 @@ footer a:hover{color:var(--yellow)}
         <p>For directions, availability, outdoor sessions or location-based photography, contact us before visiting so we can coordinate your session.</p>
         <div class="location-details">
           <div><span>📍</span><span><strong>Homa Bay County</strong><br>Tom Mboya University Street</span></div>
-          <div><span>📞</span><span><strong>+254 745 5500 941</strong><br>Call for bookings and enquiries</span></div>
+          <div><span>📞</span><span><strong>+254 745 550 094</strong><br>Call for bookings and enquiries</span></div>
           <div><span>💬</span><span><strong>WhatsApp Available</strong><br>Send your requirements directly</span></div>
         </div>
       </div>
@@ -489,7 +550,11 @@ footer a:hover{color:var(--yellow)}
       </div>
       <div>
         <h3>Quick Links</h3>
-        <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="portfolio.html">Portfolio</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div>
         <h3>Contact</h3>
@@ -506,36 +571,57 @@ footer a:hover{color:var(--yellow)}
 <a class="whatsapp" href="https://wa.me/254745550094" target="_blank" rel="noopener" aria-label="Chat with TJ Shuttervibes on WhatsApp">💬</a>
 
 <script>
-const menuBtn=document.getElementById("menuBtn");
-const nav=document.getElementById("mainNav");
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("mainNav");
 
-menuBtn.addEventListener("click",()=>{
-  const open=nav.classList.toggle("open");
-  menuBtn.setAttribute("aria-expanded",open);
+menuBtn.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
 });
 
-document.querySelectorAll("#mainNav a").forEach(link=>{
-  link.addEventListener("click",()=>nav.classList.remove("open"));
+document.querySelectorAll("#mainNav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
 });
 
-const dateInput=document.getElementById("date");
-const today=new Date();
-const yyyy=today.getFullYear();
-const mm=String(today.getMonth()+1).padStart(2,"0");
-const dd=String(today.getDate()).padStart(2,"0");
-dateInput.min=`${yyyy}-${mm}-${dd}`;
+// Prevent selecting a booking date in the past.
+const dateInput = document.getElementById("date");
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, "0");
+const dd = String(today.getDate()).padStart(2, "0");
+dateInput.min = `${yyyy}-${mm}-${dd}`;
 
-document.getElementById("bookingForm").addEventListener("submit",function(e){
+// Send the booking request to WhatsApp.
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  const name=document.getElementById("name").value.trim();
-  const phone=document.getElementById("phone").value.trim();
-  const email=document.getElementById("email").value.trim() || "Not provided";
-  const type=document.getElementById("type").value;
-  const date=document.getElementById("date").value || "Not specified";
-  const location=document.getElementById("location").value.trim() || "Not specified";
-  const message=document.getElementById("message").value.trim() || "No additional details";
 
-  const text =
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim() || "Not provided";
+  const type = document.getElementById("type").value;
+  const date = document.getElementById("date").value || "Not specified";
+  const location = document.getElementById("location").value.trim() || "Not specified";
+  const message = document.getElementById("message").value.trim() || "No additional details";
+
+  const hour = document.getElementById("timeHour").value;
+  const minute = document.getElementById("timeMinute").value;
+  const period = document.getElementById("timePeriod").value;
+
+  let preferredTime = "Not specified";
+
+  if (hour || minute || period) {
+    if (!hour || !minute || !period) {
+      document.getElementById("formStatus").textContent =
+        "Please select the hour, minute and AM/PM, or leave all three blank.";
+      return;
+    }
+    preferredTime = `${hour}:${minute} ${period}`;
+  }
+
+  const bookingText =
 `📸 TJ SHUTTERVIBES BOOKING REQUEST
 
 Name: ${name}
@@ -543,6 +629,7 @@ Phone: ${phone}
 Email: ${email}
 Shoot Type: ${type}
 Preferred Date: ${date}
+Preferred Time: ${preferredTime}
 Location: ${location}
 
 Message:
@@ -550,18 +637,34 @@ ${message}
 
 Please confirm availability and booking details.`;
 
-  const status=document.getElementById("formStatus");
-  status.textContent="Opening WhatsApp…";
-  window.open("https://wa.me/254745550094?text="+encodeURIComponent(text),"_blank","noopener");
+  document.getElementById("formStatus").textContent = "Opening WhatsApp…";
+
+  const whatsappURL =
+    "https://wa.me/254745550094?text=" + encodeURIComponent(bookingText);
+
+  const whatsappWindow = window.open(whatsappURL, "_blank");
+
+  if (!whatsappWindow) {
+    document.getElementById("formStatus").textContent =
+      "WhatsApp could not open automatically. Please allow pop-ups and submit again.";
+  }
 });
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.classList.add("show");
-  });
-},{threshold:.1});
+// Reveal content as it enters the viewport.
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
 
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("show"));
+}
 </script>
 </body>
 </html>
